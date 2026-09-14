@@ -93,14 +93,14 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 1</div>
   <h1>⭐ Básico</h1>
-  <p>Interpretação, frases, sílaba tônica e R/RR — 14 questões</p>
+  <p>Interpretação, frases, sílaba tônica, R/RR e verbos — 18 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 14</span>
+  <span class="score-num" id="scoreDisplay">0 / 18</span>
 </div>
 
 <!-- Q1 -->
@@ -271,6 +271,54 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q14"></div>
 </div>
 
+<!-- Q15 -->
+<div class="card" id="q15">
+  <div class="q-num">15</div><span class="q-type">Verbos</span>
+  <div class="q-text">O passado dos verbos geralmente termina em:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q15" data-correct="true" data-msg="Isso mesmo! O passado geralmente termina em -AM." data-tip="">-AM</button>
+    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! -ÃO é a terminação do futuro." data-tip="💡 Pense em 'eles jogARAM futebol ontem'.">-ÃO</button>
+    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! Essa terminação não indica um tempo específico sozinha." data-tip="💡 Pense em 'eles jogARAM futebol ontem'.">-ER</button>
+  </div>
+  <div class="feedback" id="fb-q15"></div>
+</div>
+
+<!-- Q16 -->
+<div class="card" id="q16">
+  <div class="q-num">16</div><span class="q-type">Verbos</span>
+  <div class="q-text">O futuro dos verbos geralmente termina em:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q16" data-correct="true" data-msg="Isso mesmo! O futuro geralmente termina em -ÃO." data-tip="">-ÃO</button>
+    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! -AM é a terminação do passado." data-tip="💡 Pense em 'eles almoçarÃO amanhã'.">-AM</button>
+    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Essa terminação não indica futuro." data-tip="💡 Pense em 'eles almoçarÃO amanhã'.">-OU</button>
+  </div>
+  <div class="feedback" id="fb-q16"></div>
+</div>
+
+<!-- Q17 -->
+<div class="card" id="q17">
+  <div class="q-num">17</div><span class="q-type">O Verbete</span>
+  <div class="q-text">Um verbete é encontrado em qual tipo de texto?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q17" data-correct="true" data-msg="Isso mesmo! Verbetes aparecem em dicionários e enciclopédias." data-tip="">Dicionário ou enciclopédia</button>
+    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! Diários têm outra estrutura, sem definições de palavras." data-tip="💡 Pense em onde você procura o significado de uma palavra.">Diário pessoal</button>
+    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! Tirinhas contam cenas curtas com humor." data-tip="💡 Pense em onde você procura o significado de uma palavra.">Tirinha de quadrinhos</button>
+  </div>
+  <div class="feedback" id="fb-q17"></div>
+</div>
+
+<!-- Q18 -->
+<div class="card" id="q18">
+  <div class="q-num">18</div><span class="q-type">Sílaba tônica</span>
+  <div class="q-text">A palavra "ESPECIALISTA" (es-pe-cia-LIS-ta) tem a sílaba tônica na penúltima sílaba. Como se classifica?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! Penúltima sílaba tônica = paroxítona." data-tip="">Paroxítona</button>
+    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Oxítona é a última sílaba." data-tip="💡 Conte as sílabas de trás para frente: ta, LIS, cia, pe, es.">Oxítona</button>
+    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Proparoxítona é a antepenúltima sílaba." data-tip="💡 Conte as sílabas de trás para frente: ta, LIS, cia, pe, es.">Proparoxítona</button>
+  </div>
+  <div class="feedback" id="fb-q18"></div>
+</div>
+
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
 
 <div class="result-panel" id="resultPanel">
@@ -299,7 +347,7 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 14;
+var total = 18;
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
   var fb = document.getElementById('fb-' + qid);
@@ -342,7 +390,7 @@ document.getElementById('finishBtn').addEventListener('click', function() {
   else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
   else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
   document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 14';
+  document.getElementById('resultGrade').textContent = score + ' / 18';
   document.getElementById('resultGradeLabel').textContent = gradeLabel;
   document.getElementById('resultMsg').textContent = msg;
   document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';

@@ -109,15 +109,15 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 3</div>
   <h1>💎 Avançado</h1>
-  <p>Leitura, raciocínio e reflexão — 21 questões</p>
+  <p>Leitura, raciocínio e reflexão — 26 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="info-banner">💡 As questões de <strong>1 a 18</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
+<div class="info-banner">💡 As questões de <strong>1 a 23</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 18</span>
+  <span class="score-num" id="scoreDisplay">0 / 23</span>
 </div>
 
 <!-- Q1 -->
@@ -320,31 +320,97 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q18"></div>
 </div>
 
-<!-- Q19 reflection -->
-<div class="card reflect" id="q19">
-  <div class="q-num">19</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+<!-- Reading passage -->
+<div class="card" id="reading-passage">
+  <div class="q-type">📖 Leitura — O Jardim da Vovó Alzira</div>
+  <div class="q-text" style="margin-top:8px;">Na casinha amarela da esquina, morava dona Alzira, uma senhora que cuidava de um jardim enorme atrás de casa. Todos os dias, ela dizia para o neto Bento: "Ali no fundo do jardim está escondido o meu maior tesouro."<br><br>
+  Um dia, Bento resolveu cavar perto da roseira mais velha, certo de que ia encontrar moedas de ouro. Cavou, cavou... e encontrou apenas uma caixinha de madeira cheia de sementes secas.<br><br>
+  Bento ficou com a cara amarrada: "Vovó, só tinha sementes velhas aí dentro!"<br><br>
+  Dona Alzira sorriu e pegou a mão do neto: "Essas sementes vão virar flores que a gente planta juntos todo ano, meu filho. E as flores, a gente compartilha com os vizinhos. Esse é o meu tesouro: o que plantamos e o que damos aos outros."</div>
+</div>
+
+<!-- Q19 -->
+<div class="card" id="q19b">
+  <div class="q-num">19</div><span class="q-type">Interpretação · Sentido literal</span>
+  <div class="q-text">No sentido literal (real) da história, o que Bento esperava encontrar no fundo do jardim?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q19b" data-correct="true" data-msg="Isso mesmo! Bento esperava encontrar moedas de ouro." data-tip="">Moedas de ouro</button>
+    <button class="opt-btn" data-q="q19b" data-correct="false" data-msg="Errado! Foi o que ele encontrou, não o que esperava encontrar." data-tip="💡 Releia o trecho: 'certo de que ia encontrar moedas de ouro'.">Sementes secas</button>
+    <button class="opt-btn" data-q="q19b" data-correct="false" data-msg="Errado! O texto não menciona isso." data-tip="💡 Releia o trecho: 'certo de que ia encontrar moedas de ouro'.">Uma carta antiga</button>
+  </div>
+  <div class="feedback" id="fb-q19b"></div>
+</div>
+
+<!-- Q20 -->
+<div class="card" id="q20b">
+  <div class="q-num">20</div><span class="q-type">Interpretação · Sentido figurado</span>
+  <div class="q-text">Qual é a interpretação (sentido figurado) da frase da vovó: "esse é o meu tesouro"?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q20b" data-correct="true" data-msg="Isso mesmo! O 'tesouro' da vovó é o ato de plantar e compartilhar, não riqueza material." data-tip="">O que ela mais valoriza é plantar e compartilhar com os outros</button>
+    <button class="opt-btn" data-q="q20b" data-correct="false" data-msg="Errado! O texto não fala sobre moedas escondidas de verdade." data-tip="💡 Pense no que a vovó realmente valoriza, além do dinheiro.">Ela tinha moedas de ouro escondidas em outro lugar</button>
+    <button class="opt-btn" data-q="q20b" data-correct="false" data-msg="Errado! A vovó não queria enganar o neto, ela queria ensinar algo." data-tip="💡 Pense no que a vovó realmente valoriza, além do dinheiro.">Ela queria enganar o neto de propósito</button>
+  </div>
+  <div class="feedback" id="fb-q20b"></div>
+</div>
+
+<!-- Q21 -->
+<div class="card" id="q21b">
+  <div class="q-num">21</div><span class="q-type">Interpretação · Intenção do autor</span>
+  <div class="q-text">Por que o autor escolheu colocar sementes dentro da caixa, e não moedas de verdade?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q21b" data-correct="true" data-msg="Isso mesmo! As sementes representam que o valor está em cultivar e compartilhar, não em riquezas materiais." data-tip="">Para mostrar que o verdadeiro valor está em cultivar e compartilhar</button>
+    <button class="opt-btn" data-q="q21b" data-correct="false" data-msg="Errado! O texto não fala sobre jardinagem como profissão." data-tip="💡 Pense na mensagem final que a vovó passa para o neto.">Para ensinar Bento a ser jardineiro profissional</button>
+    <button class="opt-btn" data-q="q21b" data-correct="false" data-msg="Errado! Isso não tem relação com a mensagem do texto." data-tip="💡 Pense na mensagem final que a vovó passa para o neto.">Porque sementes custam menos do que moedas de ouro</button>
+  </div>
+  <div class="feedback" id="fb-q21b"></div>
+</div>
+
+<!-- Q22 blank -->
+<div class="card" id="q22">
+  <div class="q-num">22</div><span class="q-type">Verbos</span>
+  <div class="q-text">Complete no passado: "No mês passado, eles <strong>______</strong> de viagem." (voltar)</div>
+  <input type="text" class="blank-input" id="inp-q22" placeholder="Digite o verbo...">
+  <button class="check-btn" id="btn-q22">Verificar resposta</button>
+  <div class="feedback" id="fb-q22"></div>
+</div>
+
+<!-- Q23 -->
+<div class="card" id="q23">
+  <div class="q-num">23</div><span class="q-type">O Verbete</span>
+  <div class="q-text">Um verbete de dicionário costuma indicar a classe gramatical da palavra de forma abreviada. Qual destas abreviações representa "substantivo feminino"?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q23" data-correct="true" data-msg="Isso mesmo! s.f. abrevia 'substantivo feminino'." data-tip="">s.f.</button>
+    <button class="opt-btn" data-q="q23" data-correct="false" data-msg="Errado! Essa não é a abreviação usada para substantivo feminino." data-tip="💡 Pense nas iniciais de 'substantivo' e 'feminino'.">v.t.</button>
+    <button class="opt-btn" data-q="q23" data-correct="false" data-msg="Errado! Essa não é a abreviação usada para substantivo feminino." data-tip="💡 Pense nas iniciais de 'substantivo' e 'feminino'.">adj.</button>
+  </div>
+  <div class="feedback" id="fb-q23"></div>
+</div>
+
+<!-- Q24 reflection -->
+<div class="card reflect" id="q24">
+  <div class="q-num">24</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
   <div class="q-text">Na sua opinião, por que escrever um diário (como o da Maura ou o Naturário) pode ajudar uma pessoa a entender melhor seus sentimentos e experiências?</div>
-  <textarea class="blank-input" id="inp-q19" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q19">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q19"></div>
+  <textarea class="blank-input" id="inp-q24" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q24">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q24"></div>
 </div>
 
-<!-- Q20 reflection -->
-<div class="card reflect" id="q20">
-  <div class="q-num">20</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+<!-- Q25 reflection -->
+<div class="card reflect" id="q25">
+  <div class="q-num">25</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
   <div class="q-text">Escreva uma frase, com no mínimo 5 palavras, sobre algo que você observou na natureza recentemente. Depois, identifique o verbo dela.</div>
-  <textarea class="blank-input" id="inp-q20" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q20">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q20"></div>
+  <textarea class="blank-input" id="inp-q25" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q25">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q25"></div>
 </div>
 
-<!-- Q21 reflection -->
-<div class="card reflect" id="q21">
-  <div class="q-num">21</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+<!-- Q26 reflection -->
+<div class="card reflect" id="q26">
+  <div class="q-num">26</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
   <div class="q-text">Escolha uma palavra de casa e classifique-a como oxítona, paroxítona ou proparoxítona, explicando por quê.</div>
-  <textarea class="blank-input" id="inp-q21" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q21">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q21"></div>
+  <textarea class="blank-input" id="inp-q26" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q26">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q26"></div>
 </div>
 
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
@@ -375,7 +441,7 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 18;
+var total = 23;
 
 var blankCfg = {
   'q3':  { accepts: ['isolamento social','isolamento','pandemia'], ok: 'Isso mesmo! O ano de 2020 foi marcado pelo isolamento social (pandemia), o que inspirou o projeto.', nok: 'A resposta correta é: isolamento social (pandemia).', tip: '💡 Pense no motivo pelo qual as crianças ficaram mais tempo em casa em 2020.' },
@@ -384,12 +450,13 @@ var blankCfg = {
   'q11': { accepts: ['caro'], ok: 'Isso mesmo! Caro (som fraco entre vogais) se escreve com um R só.', nok: 'A resposta correta é: caro.', tip: '💡 Compare com "carro" — som forte, RR.' },
   'q14': { accepts: ['as arvores','as árvores','arvores','árvores'], ok: 'Isso mesmo! "As árvores" é o sujeito, que vem antes do verbo.', nok: 'A resposta correta é: as árvores.', tip: '💡 Pense em quem pratica a ação de "ficar verde".' },
   'q17': { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
+  'q22': { accepts: ['voltaram'], ok: 'Isso mesmo! Voltaram está no passado (-AM).', nok: 'A resposta correta é: voltaram.', tip: '💡 "No mês passado" indica que já aconteceu.' },
 };
 
 var reflectionModel = {
-  'q19': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
-  'q20': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
-  'q21': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
+  'q24': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
+  'q25': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
+  'q26': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
 };
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
@@ -442,7 +509,7 @@ Object.keys(blankCfg).forEach(function(qid) {
   });
 });
 
-['q19','q20','q21'].forEach(function(qid) {
+['q24','q25','q26'].forEach(function(qid) {
   var btn = document.getElementById('btn-' + qid);
   btn.addEventListener('click', function() {
     btn.disabled = true;

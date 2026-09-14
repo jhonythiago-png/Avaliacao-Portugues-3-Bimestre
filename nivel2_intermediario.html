@@ -101,14 +101,14 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 2</div>
   <h1>🔥 Intermediário</h1>
-  <p>Interpretação, frases, sílaba tônica e R/RR — 14 questões</p>
+  <p>Interpretação, frases, sílaba tônica, R/RR e verbos — 18 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 14</span>
+  <span class="score-num" id="scoreDisplay">0 / 18</span>
 </div>
 
 <!-- Q1 blank -->
@@ -267,6 +267,48 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q14"></div>
 </div>
 
+<!-- Q15 blank -->
+<div class="card" id="q15">
+  <div class="q-num">15</div><span class="q-type">Verbos</span>
+  <div class="q-text">Complete com o verbo no passado: "Ontem, os meninos <strong>______</strong> futebol no parque." (jogar)</div>
+  <input type="text" class="blank-input" id="inp-q15" placeholder="Digite o verbo...">
+  <button class="check-btn" id="btn-q15">Verificar resposta</button>
+  <div class="feedback" id="fb-q15"></div>
+</div>
+
+<!-- Q16 blank -->
+<div class="card" id="q16">
+  <div class="q-num">16</div><span class="q-type">Verbos</span>
+  <div class="q-text">Complete com o verbo no futuro: "Amanhã, as meninas <strong>______</strong> ao cinema." (assistir)</div>
+  <input type="text" class="blank-input" id="inp-q16" placeholder="Digite o verbo...">
+  <button class="check-btn" id="btn-q16">Verificar resposta</button>
+  <div class="feedback" id="fb-q16"></div>
+</div>
+
+<!-- Q17 -->
+<div class="card" id="q17">
+  <div class="q-num">17</div><span class="q-type">Verbos</span>
+  <div class="q-text">A terminação -ÃO no verbo indica uma ação que:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q17" data-correct="true" data-msg="Isso mesmo! -ÃO indica futuro, ação que ainda vai acontecer." data-tip="">Ainda vai acontecer (futuro)</button>
+    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! -AM é que indica o passado." data-tip="💡 Pense em 'eles voltarÃO' — quando isso vai acontecer?">Já aconteceu (passado)</button>
+    <button class="opt-btn" data-q="q17" data-correct="false" data-msg="Errado! O presente não usa essa terminação." data-tip="💡 Pense em 'eles voltarÃO' — quando isso vai acontecer?">Está acontecendo agora (presente)</button>
+  </div>
+  <div class="feedback" id="fb-q17"></div>
+</div>
+
+<!-- Q18 -->
+<div class="card" id="q18">
+  <div class="q-num">18</div><span class="q-type">O Verbete</span>
+  <div class="q-text">Um verbete, como os encontrados no dicionário, serve para:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! Verbetes explicam o significado das palavras." data-tip="">Explicar o significado de uma palavra</button>
+    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Isso não é a função de um verbete." data-tip="💡 Pense em quando você procura uma palavra no dicionário.">Contar uma história em capítulos</button>
+    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Isso não é a função de um verbete." data-tip="💡 Pense em quando você procura uma palavra no dicionário.">Vender um produto</button>
+  </div>
+  <div class="feedback" id="fb-q18"></div>
+</div>
+
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
 
 <div class="result-panel" id="resultPanel">
@@ -295,13 +337,15 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 14;
+var total = 18;
 
 var blankCfg = {
   'q1':  { accepts: ['rr'], ok: 'Isso mesmo! R forte entre vogais se escreve com RR.', nok: 'A resposta correta é: RR.', tip: '💡 Pense na palavra "carro"!' },
   'q4':  { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
   'q7':  { accepts: ['thome','thomé'], ok: 'Isso mesmo! Ana Carol Thomé criou o projeto Naturário.', nok: 'A resposta correta é: Thomé.', tip: '💡 É o mesmo sobrenome da educadora citada no texto.' },
   'q13': { accepts: ['forte'], ok: 'Isso mesmo! No início da palavra, o R sempre tem som forte.', nok: 'A resposta correta é: forte.', tip: '💡 Pense na palavra "rato" — como ela soa?' },
+  'q15': { accepts: ['jogaram'], ok: 'Isso mesmo! Jogaram está no passado (-AM).', nok: 'A resposta correta é: jogaram.', tip: '💡 "Ontem" indica que já aconteceu.' },
+  'q16': { accepts: ['assistirao','assistirão'], ok: 'Isso mesmo! Assistirão está no futuro (-ÃO).', nok: 'A resposta correta é: assistirão.', tip: '💡 "Amanhã" indica que ainda vai acontecer.' },
 };
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
@@ -366,7 +410,7 @@ document.getElementById('finishBtn').addEventListener('click', function() {
   else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
   else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
   document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 14';
+  document.getElementById('resultGrade').textContent = score + ' / 18';
   document.getElementById('resultGradeLabel').textContent = gradeLabel;
   document.getElementById('resultMsg').textContent = msg;
   document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';

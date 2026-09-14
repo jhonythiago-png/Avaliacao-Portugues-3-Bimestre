@@ -36,6 +36,8 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; colo
 .s4 { background: linear-gradient(135deg,#be185d,#ec4899); }
 .s5 { background: linear-gradient(135deg,#0d9488,#2dd4bf); }
 .s6 { background: linear-gradient(135deg,#16a34a,#22c55e); }
+.s7 { background: linear-gradient(135deg,#0891b2,#22d3ee); }
+.s8 { background: linear-gradient(135deg,#475569,#64748b); }
 .section-title { font-size: 1.05rem; font-weight: 800; color: #241638; }
 .section-sub { font-size: 0.74rem; color: #8a7a9a; margin-top: 2px; }
 
@@ -117,7 +119,7 @@ body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; colo
   .divider { border-top: 1px solid #ddd !important; display: block !important; }
 
   #sec1 { page-break-before: avoid !important; }
-  #sec2, #sec3, #sec4, #sec5, #sec6 { page-break-before: always !important; }
+  #sec2, #sec3, #sec4, #sec5, #sec6, #sec7, #sec8 { page-break-before: always !important; }
 }
 
 /* ---- PDF EXPORT (JS-generated) ---- */
@@ -141,7 +143,7 @@ body.pdf-export .q-grid { break-inside: avoid !important; page-break-inside: avo
 body.pdf-export .q-chip { border: 1px solid #ddd !important; }
 body.pdf-export .divider { border-top: 1px solid #ddd !important; display: block !important; }
 body.pdf-export #sec1 { page-break-before: avoid !important; }
-body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-export #sec5, body.pdf-export #sec6 { page-break-before: always !important; }
+body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-export #sec5, body.pdf-export #sec6, body.pdf-export #sec7, body.pdf-export #sec8 { page-break-before: always !important; }
 </style>
 </head>
 <body>
@@ -171,7 +173,9 @@ body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-ex
   <button class="nav-dot" data-target="sec3">🧩 Frases</button>
   <button class="nav-dot" data-target="sec4">🎯 Sílaba tônica</button>
   <button class="nav-dot" data-target="sec5">🔤 R ou RR</button>
-  <button class="nav-dot" data-target="sec6">✅ Dicas</button>
+  <button class="nav-dot" data-target="sec6">🔄 Verbos</button>
+  <button class="nav-dot" data-target="sec7">📔 Verbete</button>
+  <button class="nav-dot" data-target="sec8">✅ Dicas</button>
 </div>
 
 <!-- SEC 1 -->
@@ -195,6 +199,19 @@ body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-ex
 
   <div class="tip"><div class="tip-title">🧠 Macete</div>
     Releia o trecho da pergunta no texto antes de responder. A resposta quase sempre está escrita ali, só precisa ser encontrada com calma!
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 Sentido literal x sentido interpretativo</div>
+    <div class="rule-row"><span class="rule-tag bg-blue">Sentido literal (real)</span><div class="rule-text">É o que está <em>escrito diretamente</em> no texto — os fatos, sem segundas intenções.<small>Ex: "Bento encontrou uma caixinha com sementes."</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-pink">Sentido interpretativo (figurado)</span><div class="rule-text">É a <em>mensagem por trás</em> da história — o que o autor quis dizer além do fato.<small>Ex: as sementes representam algo que cresce com o tempo, como o amor ou a amizade.</small></div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-label">Exemplo de história curta</div>
+    "Dona Alzira dizia ao neto Bento que seu maior tesouro estava escondido no jardim. Bento cavou e só achou uma caixinha com sementes secas. A vovó explicou: essas sementes virariam flores para compartilhar com os vizinhos — esse era o verdadeiro tesouro dela."<br><br>
+    <strong>Sentido literal:</strong> a caixinha tinha sementes.<br>
+    <strong>Sentido interpretativo:</strong> o "tesouro" da vovó é o ato de cultivar e compartilhar, não riqueza material.
   </div>
 </div>
 <div class="divider"></div>
@@ -311,7 +328,60 @@ body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-ex
 <!-- SEC 6 -->
 <div class="section" id="sec6">
   <div class="section-header">
-    <div class="section-icon s6">✅</div>
+    <div class="section-icon s6">🔄</div>
+    <div><div class="section-title">Verbos: Presente, Passado e Futuro</div><div class="section-sub">Terminações -AM e -ÃO</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">💡 Como identificar o tempo do verbo</div>
+    O passado geralmente termina em <strong>-AM</strong> (coisas que já aconteceram). O futuro geralmente termina em <strong>-ÃO</strong> (coisas que ainda vão acontecer).
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 Os três tempos verbais</div>
+    <div class="rule-row"><span class="rule-tag bg-blue">Presente</span><div class="rule-text">Ação que acontece <em>agora</em>.<small>Ex: "O gato bebe leite."</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-purple">Passado (-AM)</span><div class="rule-text">Ação que <em>já aconteceu</em>.<small>Ex: "Ontem, os meninos jogaram futebol."</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-pink">Futuro (-ÃO)</span><div class="rule-text">Ação que <em>ainda vai acontecer</em>.<small>Ex: "Amanhã, as meninas assistirão ao cinema."</small></div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-label">Compare</div>
+    Passado: "eles <strong>voltaram</strong> de viagem." (já aconteceu)<br>
+    Futuro: "meus tios <strong>almoçarão</strong> na minha casa." (ainda vai acontecer)
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="sec7">
+  <div class="section-header">
+    <div class="section-icon s7">📔</div>
+    <div><div class="section-title">O Verbete (Dicionário ou Enciclopédia)</div><div class="section-sub">Como funciona a explicação de uma palavra</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">💡 O que é um verbete?</div>
+    Verbete é o texto curto que explica o significado de uma palavra no dicionário (ou enciclopédia). Ele traz a classe gramatical da palavra (substantivo, adjetivo...) e uma ou mais definições.
+  </div>
+
+  <div class="example-box">
+    <div class="ex-label">Exemplo de verbete</div>
+    <strong>Girafa</strong> (gi.ra.fa) s.f. 1. Animal mamífero de pescoço muito comprido, que vive nas savanas da África. 2. É o animal mais alto do mundo.
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 O que um verbete costuma ter</div>
+    <div class="rule-row"><span class="rule-tag bg-blue">Palavra</span><div class="rule-text">Escrita já separada em sílabas.</div></div>
+    <div class="rule-row"><span class="rule-tag bg-purple">Classe gramatical</span><div class="rule-text">Abreviada, como "s.f." (substantivo feminino) ou "adj." (adjetivo).</div></div>
+    <div class="rule-row"><span class="rule-tag bg-pink">Definição(ões)</span><div class="rule-text">Um ou mais significados numerados da palavra.</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">🧠 Treine o seu!</div>
+    Você também pode criar um verbete de uma palavra inventada — basta seguir a mesma estrutura: palavra, classe gramatical e definição criativa!
+  </div>
+</div>
+<div class="divider"></div>
+
+<div class="section" id="sec8">
+  <div class="section-header">
+    <div class="section-icon s8">✅</div>
     <div><div class="section-title">Dicas Rápidas para a Prova</div><div class="section-sub">Revisão relâmpago antes de responder</div></div>
   </div>
 
@@ -321,6 +391,7 @@ body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-ex
     <div class="rule-row"><span class="rule-tag bg-blue">2</span><div class="rule-text">Organizei as frases pensando em Quem, O quê, Quando?</div></div>
     <div class="rule-row"><span class="rule-tag bg-pink">3</span><div class="rule-text">Contei a sílaba tônica de trás para frente?</div></div>
     <div class="rule-row"><span class="rule-tag bg-teal">4</span><div class="rule-text">Conferi se o R está no início, entre vogais ou depois de consoante?</div></div>
+    <div class="rule-row"><span class="rule-tag bg-amber">5</span><div class="rule-text">Verifiquei se o verbo termina em -AM (passado) ou -ÃO (futuro)?</div></div>
   </div>
 
   <div class="tip"><div class="tip-title">🌟 Você consegue!</div>
@@ -330,6 +401,7 @@ body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-ex
 
 <div class="bottom-nav">
   <a href="index.html" class="btn-home">🏠 Voltar ao Início</a>
+
   <a href="nivel1_basico.html" class="btn-next">⭐ Nível 1 →</a>
 </div>
 
@@ -352,7 +424,7 @@ document.querySelectorAll('.nav-dot[data-target]').forEach(function(btn) {
     if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 });
-var sections = ['sec1','sec2','sec3','sec4','sec5','sec6'];
+var sections = ['sec1','sec2','sec3','sec4','sec5','sec6','sec7','sec8'];
 function updateProgress() {
   var scrolled = window.scrollY + window.innerHeight;
   var total = document.body.scrollHeight;
