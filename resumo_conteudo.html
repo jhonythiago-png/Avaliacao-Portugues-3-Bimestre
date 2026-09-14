@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📚 Resumo – Português</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; color: #241638; padding-bottom: 80px; }
+
+.top-nav { background: #241638; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.top-nav a { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
+.top-nav span { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
+
+.hero { background: linear-gradient(145deg,#6d28d9,#a855f7,#ec4899); padding: 32px 20px 24px; text-align: center; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(255,255,255,0.1), transparent 60%); pointer-events: none; }
+.hero-emoji { font-size: 3rem; display: block; margin-bottom: 10px; position: relative; }
+.hero h1 { font-size: 1.55rem; font-weight: 900; color: white; line-height: 1.2; position: relative; }
+.hero h2 { font-size: 0.95rem; color: rgba(255,255,255,0.75); font-weight: 400; margin-top: 6px; position: relative; }
+.hero-pill { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3); color: white; font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; position: relative; }
+
+.print-btn-wrap { text-align: right; padding: 10px 16px 0; }
+.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(124,58,237,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(124,58,237,0.7); cursor: pointer; }
+.print-btn:hover { border-color: #7c3aed; color: #7c3aed; }
+
+.nav-dots { display: flex; justify-content: center; gap: 6px; padding: 12px 8px; background: #f6f0fb; border-bottom: 1px solid #ecdcfa; flex-wrap: wrap; position: sticky; top: 41px; z-index: 40; }
+.nav-dot { background: none; border: 2px solid #d8b4fe; color: #7c3aed; font-size: 0.68rem; font-weight: 700; padding: 4px 9px; border-radius: 20px; cursor: pointer; white-space: nowrap; }
+.nav-dot.active, .nav-dot:active { background: #7c3aed; color: white; border-color: #7c3aed; }
+
+.section { padding: 20px 16px 8px; }
+.section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.section-icon { width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.s1 { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+.s2 { background: linear-gradient(135deg,#0369a1,#38bdf8); }
+.s3 { background: linear-gradient(135deg,#d97706,#f59e0b); }
+.s4 { background: linear-gradient(135deg,#be185d,#ec4899); }
+.s5 { background: linear-gradient(135deg,#0d9488,#2dd4bf); }
+.s6 { background: linear-gradient(135deg,#16a34a,#22c55e); }
+.section-title { font-size: 1.05rem; font-weight: 800; color: #241638; }
+.section-sub { font-size: 0.74rem; color: #8a7a9a; margin-top: 2px; }
+
+.card { background: white; border-radius: 16px; padding: 16px; margin-bottom: 12px; box-shadow: 0 2px 12px rgba(124,58,237,0.08); border: 1px solid #ecdcfa; }
+.card-title { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #7c3aed; margin-bottom: 10px; }
+
+.tip { background: linear-gradient(135deg,#f5edfd,#fdf2f8); border-left: 4px solid #a855f7; border-radius: 0 12px 12px 0; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.6; }
+.tip .tip-title { font-size: 0.7rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+.tip strong { color: #7c3aed; }
+
+.rule-box { background: white; border: 2px solid #7c3aed; border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+.rule-title { font-size: 0.7rem; font-weight: 700; color: #7c3aed; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.rule-row { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px dashed #ecdcfa; }
+.rule-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
+.rule-tag { color: white; font-size: 0.75rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; white-space: nowrap; flex-shrink: 0; margin-top: 2px; }
+.bg-purple { background: #7c3aed; }
+.bg-blue   { background: #0369a1; }
+.bg-amber  { background: #d97706; }
+.bg-pink   { background: #be185d; }
+.bg-teal   { background: #0d9488; }
+.bg-green  { background: #16a34a; }
+.rule-text { font-size: 0.88rem; line-height: 1.55; }
+.rule-text em { color: #7c3aed; font-style: normal; font-weight: 700; }
+.rule-text small { display: block; color: #a293b0; font-size: 0.78rem; margin-top: 2px; }
+
+.example-box { background: #faf6fd; border: 1.5px solid #ecdcfa; border-radius: 12px; padding: 12px 14px; margin-bottom: 12px; font-size: 0.88rem; line-height: 1.7; }
+.example-box .ex-label { font-size: 0.68rem; font-weight: 700; color: #8a7a9a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+.ex-correct { color: #16a34a; font-weight: 700; }
+
+.q-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.q-chip { background: #faf6fd; border: 1.5px solid #ecdcfa; border-radius: 20px; padding: 7px 14px; font-size: 0.82rem; font-weight: 700; color: #7c3aed; }
+
+.bottom-nav { display: flex; gap: 10px; padding: 0 14px; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-home { background: rgba(124,58,237,0.12); border: 1.5px solid rgba(124,58,237,0.25); color: #7c3aed !important; }
+.btn-next { background: linear-gradient(135deg,#7c3aed,#a855f7); color: white !important; }
+
+.divider { height: 1px; background: #ecdcfa; margin: 8px 16px 0; }
+.progress-footer { position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid #ecdcfa; padding: 10px 16px; display: flex; align-items: center; gap: 12px; z-index: 20; }
+.pf-label { font-size: 0.75rem; font-weight: 700; color: #7c3aed; white-space: nowrap; }
+.pf-bar { flex: 1; background: #ecdcfa; border-radius: 10px; height: 8px; overflow: hidden; }
+.pf-fill { height: 100%; background: linear-gradient(90deg,#7c3aed,#16a34a); border-radius: 10px; transition: width 0.5s; width: 0%; }
+.pf-pct { font-size: 0.75rem; font-weight: 700; color: #8a7a9a; }
+.credit { text-align: center; padding: 16px 14px 8px; font-size: 0.75rem; color: #bbb; }
+.credit strong { color: #7c3aed; }
+
+@media print {
+  .top-nav, .print-btn-wrap, .nav-dots, .progress-footer, .bottom-nav, .hero, .credit, .pf-bar, .pf-pct { display: none !important; }
+  .print-title-header { display: block !important; }
+  html, body { background: white !important; color: #111 !important; font-size: 11pt; min-height: 0 !important; height: auto !important; overflow: visible !important; }
+  body { padding-bottom: 0 !important; }
+  body * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; overflow: visible !important; }
+
+  .section { padding: 10px 0 4px !important; page-break-inside: avoid !important; }
+  .section-header { margin-bottom: 8px !important; }
+  .section-icon { width: 32px !important; height: 32px !important; font-size: 1rem !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .section-title { font-size: 12pt !important; font-weight: 700 !important; color: #241638 !important; }
+  .section-sub   { color: #555 !important; }
+
+  .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; margin-bottom: 8px !important; padding: 10px !important; }
+  .card-title { color: #7c3aed !important; }
+
+  .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 10px !important; }
+  .rule-title { color: #7c3aed !important; }
+  .rule-tag { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; font-size: 8pt !important; padding: 2px 6px !important; }
+  .rule-text { font-size: 10pt !important; }
+  .rule-text em { color: #7c3aed !important; }
+  .rule-row { border-bottom: 1px dashed #ccc !important; }
+
+  .tip { border-left: 3px solid #7c3aed !important; background: #f8f4fc !important; break-inside: avoid !important; page-break-inside: avoid !important; padding: 8px 10px !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .tip strong { color: #7c3aed !important; }
+
+  .example-box { border: 1px solid #ccc !important; border-radius: 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+  .ex-correct { color: #166534 !important; }
+
+  .q-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
+  .q-chip { border: 1px solid #ddd !important; }
+
+  .divider { border-top: 1px solid #ddd !important; display: block !important; }
+
+  #sec1 { page-break-before: avoid !important; }
+  #sec2, #sec3, #sec4, #sec5, #sec6 { page-break-before: always !important; }
+}
+
+/* ---- PDF EXPORT (JS-generated) ---- */
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .nav-dots, body.pdf-export .progress-footer, body.pdf-export .bottom-nav, body.pdf-export .hero, body.pdf-export .credit, body.pdf-export .pf-bar, body.pdf-export .pf-pct { display: none !important; }
+body.pdf-export .print-title-header { display: block !important; }
+body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; text-shadow: none !important; }
+body.pdf-export .section { padding: 10px 0 4px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .section-title { font-weight: 700 !important; color: #241638 !important; }
+body.pdf-export .section-sub { color: #555 !important; }
+body.pdf-export .card { border: 1px solid #bbb !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .card-title { color: #7c3aed !important; }
+body.pdf-export .rule-box { border: 1.5px solid #555 !important; border-radius: 6px !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .rule-title, body.pdf-export .rule-text em { color: #7c3aed !important; }
+body.pdf-export .rule-row { border-bottom: 1px dashed #ccc !important; }
+body.pdf-export .tip { border-left: 3px solid #7c3aed !important; background: #f8f4fc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .tip strong { color: #7c3aed !important; }
+body.pdf-export .example-box { border: 1px solid #ccc !important; break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .ex-correct { color: #166534 !important; }
+body.pdf-export .q-grid { break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .q-chip { border: 1px solid #ddd !important; }
+body.pdf-export .divider { border-top: 1px solid #ddd !important; display: block !important; }
+body.pdf-export #sec1 { page-break-before: avoid !important; }
+body.pdf-export #sec2, body.pdf-export #sec3, body.pdf-export #sec4, body.pdf-export #sec5, body.pdf-export #sec6 { page-break-before: always !important; }
+</style>
+</head>
+<body>
+
+<!-- PRINT HEADER (hidden on screen) -->
+<div class="print-title-header" style="display:none;text-align:center;padding:0 0 12px;border-bottom:2px solid #7c3aed;margin-bottom:16px;">
+  <div style="font-size:14pt;font-weight:900;color:#7c3aed;">Português — Guia de Estudos</div>
+  <div style="font-size:10pt;color:#555;margin-top:4px;">Amigos da Natureza — Caps. 7 e 8 · Desenvolvido por Jhony Beraldo</div>
+</div>
+
+<div class="top-nav">
+  <a href="index.html">🏠 Início</a>
+  <span>📚 Resumo do Conteúdo</span>
+</div>
+<div class="hero">
+  <span class="hero-emoji">📚</span>
+  <h1>Resumo de Português</h1>
+  <h2>Amigos da Natureza · Caps. 7 e 8</h2>
+  <div class="hero-pill">📝 Leia antes de fazer a prova!</div>
+</div>
+
+<div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
+
+<div class="nav-dots">
+  <button class="nav-dot active" data-target="sec1">📖 Interpretar</button>
+  <button class="nav-dot" data-target="sec2">📓 Os textos</button>
+  <button class="nav-dot" data-target="sec3">🧩 Frases</button>
+  <button class="nav-dot" data-target="sec4">🎯 Sílaba tônica</button>
+  <button class="nav-dot" data-target="sec5">🔤 R ou RR</button>
+  <button class="nav-dot" data-target="sec6">✅ Dicas</button>
+</div>
+
+<!-- SEC 1 -->
+<div class="section" id="sec1">
+  <div class="section-header">
+    <div class="section-icon s1">📖</div>
+    <div><div class="section-title">Como Interpretar um Texto</div><div class="section-sub">Estratégias para entender o que você lê</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">💡 Antes de responder</div>
+    Leia o texto com atenção — se possível, mais de uma vez. Preste atenção em quem escreveu, para quem, com qual finalidade e qual é a ideia principal.
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 Perguntas que ajudam a interpretar</div>
+    <div class="rule-row"><span class="rule-tag bg-purple">Quem?</span><div class="rule-text">Quem escreveu o texto ou é o personagem principal?</div></div>
+    <div class="rule-row"><span class="rule-tag bg-blue">Para quê?</span><div class="rule-text">Qual é a finalidade do texto? <small>Contar uma história, informar, divertir, refletir...</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-amber">Onde/Quando?</span><div class="rule-text">Onde e quando os fatos acontecem?</div></div>
+    <div class="rule-row"><span class="rule-tag bg-pink">Ideia principal</span><div class="rule-text">Qual é a mensagem mais importante do texto?</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">🧠 Macete</div>
+    Releia o trecho da pergunta no texto antes de responder. A resposta quase sempre está escrita ali, só precisa ser encontrada com calma!
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- SEC 2 -->
+<div class="section" id="sec2">
+  <div class="section-header">
+    <div class="section-icon s2">📓</div>
+    <div><div class="section-title">Os Textos do Bimestre</div><div class="section-sub">Resumo dos textos lidos nos capítulos 7 e 8</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📔 Diário de Maura</div>
+    <div class="rule-text">Maura Eduarda Brandão é uma <em>pesquisadora</em> que viajou às Ilhas Galápagos e escreveu um diário contando sobre os animais que viu (albatrozes, tartarugas gigantes, fragatas e patolas-de-pés-azuis). Um diário serve para <em>compartilhar vivências</em>, contar fatos do dia a dia e até provocar humor no leitor.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌿 Naturário</div>
+    <div class="rule-text">O <em>Naturário</em> é uma ideia do programa "Ser Criança é Natural", criado pela educadora <em>Ana Carol Thomé</em>. A proposta é registrar, todos os dias, uma ação de aproximação com a natureza — por isso usa a hashtag <em>#TodoDiaLáForaSCN</em>. Surgiu após o ano de 2020, marcado pelo isolamento social.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">😄 Tirinhas da Mafalda</div>
+    <div class="rule-text">Mafalda é uma personagem de tirinhas criada pelo cartunista argentino <em>Quino</em>, em 1964. Ela é uma menina inquieta e questionadora, que faz reflexões espertas e cheias de humor sobre o mundo à sua volta — inclusive sobre a natureza.</div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- SEC 3 -->
+<div class="section" id="sec3">
+  <div class="section-header">
+    <div class="section-icon s3">🧩</div>
+    <div><div class="section-title">Organização de Frases</div><div class="section-sub">Como montar uma frase com sentido completo</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">💡 Uma frase precisa fazer sentido</div>
+    Para organizar bem uma frase, pense nas perguntas: <strong>Quem? O quê? Como? Quando? Onde? Com quem?</strong>
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 Antes e depois do verbo</div>
+    <div class="rule-row"><span class="rule-tag bg-purple">Antes do verbo</span><div class="rule-text">Geralmente vem <em>quem pratica a ação</em> (o sujeito).<small>Ex: "As crianças brincaram..."</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-blue">Depois do verbo</span><div class="rule-text">Geralmente vem o <em>complemento</em>: o quê, como, onde ou quando.<small>Ex: "...no parque."</small></div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-label">Exemplo do livro</div>
+    Palavras soltas: "abriu" — "Miguelito" — "o sinal"<br>
+    Frase organizada: <span class="ex-correct">"Miguelito abriu o sinal."</span>
+  </div>
+
+  <div class="q-grid">
+    <div class="q-chip">Quem?</div><div class="q-chip">O quê?</div><div class="q-chip">Como?</div>
+    <div class="q-chip">Quando?</div><div class="q-chip">Onde?</div><div class="q-chip">Com quem?</div>
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- SEC 4 -->
+<div class="section" id="sec4">
+  <div class="section-header">
+    <div class="section-icon s4">🎯</div>
+    <div><div class="section-title">Posição da Sílaba Tônica</div><div class="section-sub">Oxítona, paroxítona e proparoxítona</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">💡 Como contar a posição</div>
+    Contamos a posição da sílaba tônica sempre <strong>de trás para frente</strong> — do final para o início da palavra!
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 As três classificações</div>
+    <div class="rule-row"><span class="rule-tag bg-pink">Oxítona</span><div class="rule-text">Sílaba tônica na <em>última</em> sílaba.<small>Ex: a-ZUL, fe-LIZ, ja-CA-RÉ</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-purple">Paroxítona</span><div class="rule-text">Sílaba tônica na <em>penúltima</em> sílaba.<small>Ex: MA-RI-nha, TÁ-xi, IN-crí-vel</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-blue">Proparoxítona</span><div class="rule-text">Sílaba tônica na <em>antepenúltima</em> sílaba.<small>Ex: ÂN-gu-lo, É-po-ca, Ó-cu-lo</small></div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="ex-label">Mais exemplos do livro</div>
+    Proparoxítonas: plácido, óculo<br>
+    Paroxítonas: fácil, túnel, água, vida<br>
+    Oxítonas: jiló, até, feliz
+  </div>
+</div>
+<div class="divider"></div>
+
+<!-- SEC 5 -->
+<div class="section" id="sec5">
+  <div class="section-header">
+    <div class="section-icon s5">🔤</div>
+    <div><div class="section-title">Uso do R ou RR</div><div class="section-sub">Quando usar um R ou dois</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">💡 Som fraco x som forte</div>
+    O R pode representar um som fraco ou um som forte, dependendo de onde ele está na palavra.
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 As regras principais</div>
+    <div class="rule-row"><span class="rule-tag bg-purple">R inicial</span><div class="rule-text">No início da palavra, o som é <em>sempre forte</em> — e se escreve com um R só.<small>Ex: rato, rua, rio</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-teal">R entre vogais (fraco)</span><div class="rule-text">Som <em>fraco</em> entre vogais: um R só.<small>Ex: caro, hora, naturário</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-pink">R entre vogais (forte)</span><div class="rule-text">Som <em>forte</em> entre vogais: usa-se <em>RR</em>.<small>Ex: carro, corrida</small></div></div>
+    <div class="rule-row"><span class="rule-tag bg-amber">R após consoante ou no final</span><div class="rule-text">Depois de consoante (br, tr, nr...) ou no final da sílaba/palavra: sempre um R só.<small>Ex: honra, cantar, prato</small></div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">🧠 Fique ligado!</div>
+    Quando o R com som forte estiver <strong>entre duas vogais</strong>, usamos <strong>RR</strong>. Mas se o R vier depois de uma consoante (como em "hon-ra"), usa-se sempre um R só, mesmo com som forte!
+  </div>
+
+  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
+  <div class="pf-pct" id="pfPct">0%</div>
+</div>
+<div class="divider"></div>
+
+<!-- SEC 6 -->
+<div class="section" id="sec6">
+  <div class="section-header">
+    <div class="section-icon s6">✅</div>
+    <div><div class="section-title">Dicas Rápidas para a Prova</div><div class="section-sub">Revisão relâmpago antes de responder</div></div>
+  </div>
+
+  <div class="rule-box">
+    <div class="rule-title">📐 Checklist antes de entregar</div>
+    <div class="rule-row"><span class="rule-tag bg-purple">1</span><div class="rule-text">Reli o texto e as perguntas com calma?</div></div>
+    <div class="rule-row"><span class="rule-tag bg-blue">2</span><div class="rule-text">Organizei as frases pensando em Quem, O quê, Quando?</div></div>
+    <div class="rule-row"><span class="rule-tag bg-pink">3</span><div class="rule-text">Contei a sílaba tônica de trás para frente?</div></div>
+    <div class="rule-row"><span class="rule-tag bg-teal">4</span><div class="rule-text">Conferi se o R está no início, entre vogais ou depois de consoante?</div></div>
+  </div>
+
+  <div class="tip"><div class="tip-title">🌟 Você consegue!</div>
+    Revise esse resumo com calma antes da prova. Se precisar, releia os textos do livro sobre a Maura, o Naturário e a Mafalda — eles são a base das perguntas de interpretação!
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <a href="index.html" class="btn-home">🏠 Voltar ao Início</a>
+  <a href="nivel1_basico.html" class="btn-next">⭐ Nível 1 →</a>
+</div>
+
+<div style="height:60px;"></div>
+<div class="progress-footer">
+  <div class="pf-label">📖 Progresso</div>
+  <div class="pf-bar"><div class="pf-fill" id="pfFill"></div></div>
+  <div class="pf-pct" id="pfPct">0%</div>
+</div>
+
+<div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+document.querySelectorAll('.nav-dot[data-target]').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    document.querySelectorAll('.nav-dot').forEach(function(d) { d.classList.remove('active'); });
+    btn.classList.add('active');
+    var target = document.getElementById(btn.dataset.target);
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+var sections = ['sec1','sec2','sec3','sec4','sec5','sec6'];
+function updateProgress() {
+  var scrolled = window.scrollY + window.innerHeight;
+  var total = document.body.scrollHeight;
+  var pct = Math.min(100, Math.round((scrolled / total) * 100));
+  document.getElementById('pfFill').style.width = pct + '%';
+  document.getElementById('pfPct').textContent = pct + '%';
+  for (var i = sections.length - 1; i >= 0; i--) {
+    var el = document.getElementById(sections[i]);
+    if (el && window.scrollY >= el.offsetTop - 120) {
+      document.querySelectorAll('.nav-dot').forEach(function(d, idx) { d.classList.toggle('active', idx === i); });
+      break;
+    }
+  }
+}
+window.addEventListener('scroll', updateProgress, { passive: true });
+updateProgress();
+
+function downloadPDF() {
+  var btn = document.getElementById('pdfBtn');
+  var originalText = btn.textContent;
+  btn.textContent = '⏳ Gerando PDF...';
+  btn.disabled = true;
+  document.body.classList.add('pdf-export');
+  var opt = {
+    margin: 12,
+    filename: 'Resumo_Portugues.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] }
+  };
+  html2pdf().set(opt).from(document.body).save().then(function() {
+    document.body.classList.remove('pdf-export');
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }).catch(function(err) {
+    document.body.classList.remove('pdf-export');
+    btn.textContent = originalText;
+    btn.disabled = false;
+    alert('Nao foi possivel gerar o PDF. Tente novamente.');
+  });
+}
+</script>
+</body>
+</html>

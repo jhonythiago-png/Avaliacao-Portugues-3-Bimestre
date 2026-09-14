@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>💎 Nível 3 – Avançado</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #1a0f24; min-height: 100vh; padding-bottom: 40px; color:#f9f0fb; }
+.top-nav { background: rgba(0,0,0,0.5); padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.top-nav a.nav-home { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
+.top-nav .nav-title { font-size: 0.78rem; color: rgba(255,255,255,0.45); flex: 1; text-align: center; }
+.exam-header { background: white; border: 2px solid #be185d; border-radius: 16px; padding: 16px; margin: 12px 14px 16px; }
+.eh-title { text-align: center; font-size: 0.95rem; font-weight: 900; color: #be185d; margin-bottom: 14px; }
+.eh-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 16px; }
+.eh-field label { display: block; font-size: 0.68rem; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.eh-field input { width: 100%; border: none; border-bottom: 2px solid #be185d; padding: 5px 2px; font-size: 0.9rem; font-family: inherit; outline: none; background: transparent; color: #333; }
+.header { text-align: center; padding: 22px 16px 14px; background: linear-gradient(135deg,rgba(190,24,93,0.9),rgba(124,58,237,0.9)); margin-bottom: 18px; }
+.header h1 { font-size: 1.4rem; font-weight: 900; color: white; }
+.header p  { font-size: 0.82rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
+.level-tag { display: inline-block; background: linear-gradient(90deg,#be185d,#7c3aed); color: white; font-size: 0.72rem; font-weight: 800; padding: 3px 12px; border-radius: 20px; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.wrap { padding: 0 14px; }
+.print-btn-wrap { text-align: right; margin-bottom: 12px; }
+.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(216,180,254,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(216,180,254,0.85); cursor: pointer; }
+.info-banner { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 12px 14px; margin-bottom: 16px; font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.5; }
+.info-banner strong { color: #d8b4fe; }
+.score-bar { background: rgba(255,255,255,0.06); border-radius: 14px; padding: 12px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; }
+.score-label { font-size: 0.82rem; color: rgba(255,255,255,0.7); }
+.score-num { font-size: 1.4rem; font-weight: 900; color: #d8b4fe; }
+.card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.09); border-radius: 16px; padding: 18px; margin-bottom: 14px; box-shadow: 0 3px 12px rgba(0,0,0,0.2); }
+.card.reflect { border: 1px dashed rgba(216,180,254,0.4); }
+.q-num { background: linear-gradient(135deg,#be185d,#7c3aed); color: white; font-weight: 900; font-size: 0.75rem; padding: 3px 10px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+.q-type { font-size: 0.72rem; opacity: 0.55; text-transform: uppercase; letter-spacing: 0.5px; color: rgba(255,255,255,0.4); margin-left: 6px; }
+.q-text { font-size: 0.97rem; color: #f4e9fa; margin-bottom: 14px; line-height: 1.6; }
+.q-text strong { color: #d8b4fe; font-weight: 700; }
+.q-hint { background: rgba(190,24,93,0.08); border: 1px solid rgba(190,24,93,0.25); border-radius: 10px; padding: 9px 12px; margin-bottom: 12px; font-size: 0.83rem; color: #f9a8d4; line-height: 1.5; }
+.options { display: flex; flex-direction: column; gap: 9px; }
+.opt-btn { background: rgba(255,255,255,0.06); border: 2px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 12px 14px; font-size: 0.92rem; font-family: inherit; cursor: pointer; text-align: left; color: #f4e9fa; transition: transform 0.1s; line-height: 1.4; }
+.opt-btn:active { transform: scale(0.97); }
+.opt-btn.correct { background: rgba(52,211,153,0.15); border-color: #34d399; color: #6ee7b7; }
+.opt-btn.wrong   { background: rgba(248,113,113,0.12); border-color: #f87171; color: #fca5a5; }
+.opt-btn.disabled { pointer-events: none; }
+.blank-input { background: rgba(255,255,255,0.07); border: 1.5px solid rgba(255,255,255,0.15); border-radius: 10px; padding: 11px 13px; color: white; font-size: 0.92rem; font-family: inherit; width: 100%; margin-bottom: 8px; outline: none; }
+.blank-input:focus { border-color: #be185d; }
+.blank-input.correct-input { border-color: #4ade80; }
+.blank-input.wrong-input   { border-color: #f87171; }
+textarea.blank-input { min-height: 80px; resize: vertical; font-family: inherit; }
+.check-btn { background: linear-gradient(135deg,#be185d,#7c3aed); border: none; border-radius: 10px; padding: 11px 20px; font-size: 0.9rem; font-family: inherit; font-weight: 800; color: white; cursor: pointer; display: block; width: 100%; }
+.check-btn:disabled { opacity: 0.35; pointer-events: none; }
+.feedback { display: none; margin-top: 10px; padding: 12px 13px; border-radius: 10px; font-size: 0.88rem; line-height: 1.6; }
+.feedback.show { display: block; }
+.feedback.ok  { background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.35); color: #6ee7b7; }
+.feedback.nok { background: rgba(248,113,113,0.1); border: 1px solid rgba(248,113,113,0.35); color: #fca5a5; }
+.feedback.model { background: rgba(216,180,254,0.1); border: 1px solid rgba(216,180,254,0.35); color: #ecd8ff; }
+.fb-answer { font-weight: 800; display: block; margin-bottom: 4px; }
+.fb-tip    { font-size: 0.83rem; opacity: 0.85; color: #fcd34d; }
+.finish-btn { display: block; width: 100%; padding: 16px; background: linear-gradient(135deg,#be185d,#7c3aed); color: white; border: none; border-radius: 16px; font-size: 1.1rem; font-family: inherit; font-weight: 900; cursor: pointer; margin-top: 6px; }
+.result-panel { display: none; background: rgba(255,255,255,0.04); border: 1px solid rgba(124,58,237,0.3); border-radius: 20px; padding: 28px 20px; text-align: center; margin-top: 20px; }
+.result-panel.show { display: block; }
+.result-big { font-size: 4rem; margin-bottom: 10px; }
+.result-grade { font-size: 3.5rem; font-weight: 900; background: linear-gradient(135deg,#be185d,#d8b4fe); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin: 8px 0 2px; }
+.result-grade-label { font-size: 0.8rem; font-weight: 700; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+.result-msg   { font-size: 1.1rem; font-weight: 800; color: white; margin-bottom: 8px; }
+.result-score { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-bottom: 16px; }
+.result-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.retry-btn { flex: 1; min-width: 130px; background: linear-gradient(135deg,#d8b4fe,#6d28d9); color: white; border: none; border-radius: 14px; padding: 13px 16px; font-size: 0.9rem; font-family: inherit; font-weight: 700; cursor: pointer; }
+.gabarito-link { flex: 1; min-width: 130px; background: rgba(124,58,237,0.15); border: 1.5px solid rgba(124,58,237,0.3); color: #d8b4fe !important; border-radius: 14px; padding: 13px 16px; text-decoration: none; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-prev { background: rgba(255,255,255,0.05); border: 1.5px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.7) !important; }
+.btn-next { background: linear-gradient(135deg,#1e1033,#241638); color: white !important; }
+.btn-home-only { background: rgba(124,58,237,0.12); border: 1.5px solid rgba(124,58,237,0.3); color: #d8b4fe !important; flex: 0.6; }
+.credit { text-align: center; padding: 20px 14px 8px; font-size: 0.75rem; color: rgba(255,255,255,0.3); }
+.credit strong { color: #d8b4fe; }
+
+/* ---- PDF EXPORT (JS-generated) ---- */
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .info-banner, body.pdf-export .score-bar, body.pdf-export .finish-btn, body.pdf-export .result-panel, body.pdf-export #resultPanel, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .exam-header { display: block !important; border: 2px solid #555 !important; }
+body.pdf-export .eh-field input { border-bottom: 1.5px solid #555 !important; color: #111 !important; }
+body.pdf-export .card { border: 1px solid #ccc !important; }
+body.pdf-export .opt-btn { border: 1.5px solid #bbb !important; color: #222 !important; background: white !important; margin-bottom: 4px !important; }
+body.pdf-export .opt-btn.correct, body.pdf-export .opt-btn.wrong { background: white !important; border-color: #bbb !important; }
+body.pdf-export .blank-input { border: none !important; border-bottom: 1.5px solid #555 !important; border-radius: 0 !important; color: #111 !important; background: transparent !important; }
+body.pdf-export textarea.blank-input { border: 1px solid #999 !important; }
+body.pdf-export .check-btn { display: none !important; }
+body.pdf-export .feedback { display: none !important; }
+body.pdf-export .q-hint { border: 1px solid #ddd !important; }
+body.pdf-export .header { background: white !important; border-bottom: 2px solid #be185d !important; }
+body.pdf-export .header h1, body.pdf-export .header p, body.pdf-export .level-tag { color: #111 !important; }
+body.pdf-export .credit { color: #888 !important; }
+</style>
+</head>
+<body>
+<div class="top-nav">
+  <a href="index.html" class="nav-home">🏠 Início</a>
+  <span class="nav-title">💎 Nível 3 — Avançado</span>
+</div>
+
+<div class="exam-header">
+  <div class="eh-title">📖 Avaliação de Português — Nível 3</div>
+  <div class="eh-grid">
+    <div class="eh-field"><label>Nome</label><input type="text" placeholder="Seu nome"></div>
+    <div class="eh-field"><label>Data</label><input type="text" placeholder="__/__/____"></div>
+  </div>
+</div>
+
+<div class="header">
+  <div class="level-tag">Nível 3</div>
+  <h1>💎 Avançado</h1>
+  <p>Leitura, raciocínio e reflexão — 21 questões</p>
+</div>
+
+<div class="wrap">
+<div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
+<div class="info-banner">💡 As questões de <strong>1 a 18</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
+<div class="score-bar">
+  <span class="score-label">Pontuação</span>
+  <span class="score-num" id="scoreDisplay">0 / 18</span>
+</div>
+
+<!-- Q1 -->
+<div class="card" id="q1">
+  <div class="q-num">1</div><span class="q-type">Interpretação · Diário de Maura</span>
+  <div class="q-hint">📖 A pesquisadora Maura Eduarda Brandão escreveu um diário sobre sua viagem às Ilhas Galápagos.</div>
+  <div class="q-text">Segundo o texto, em qual arquipélago ficam as ilhas Santa Cruz e Seymour, visitadas pela autora?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q1" data-correct="true" data-msg="Isso mesmo! As ilhas visitadas ficam no arquipélago de Galápagos." data-tip="">Galápagos</button>
+    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! O texto não fala sobre esse arquipélago." data-tip="💡 Pense no título do texto: 'Diário de Maura — Galápagos'.">Fernando de Noronha</button>
+    <button class="opt-btn" data-q="q1" data-correct="false" data-msg="Errado! O texto não fala sobre esse arquipélago." data-tip="💡 Pense no título do texto: 'Diário de Maura — Galápagos'.">Abrolhos</button>
+  </div>
+  <div class="feedback" id="fb-q1"></div>
+</div>
+
+<!-- Q2 -->
+<div class="card" id="q2">
+  <div class="q-num">2</div><span class="q-type">Interpretação · Diário de Maura</span>
+  <div class="q-text">O texto "Diário de Maura" foi escrito em qual formato?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q2" data-correct="true" data-msg="Isso mesmo! É um diário, com data e relato pessoal." data-tip="">Diário</button>
+    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Notícias têm outro formato, com data de publicação e fonte." data-tip="💡 Observe a data no início do texto e o tom pessoal.">Notícia de jornal</button>
+    <button class="opt-btn" data-q="q2" data-correct="false" data-msg="Errado! Não há nenhum modo de preparo no texto." data-tip="💡 Observe a data no início do texto e o tom pessoal.">Receita culinária</button>
+  </div>
+  <div class="feedback" id="fb-q2"></div>
+</div>
+
+<!-- Q3 blank -->
+<div class="card" id="q3">
+  <div class="q-num">3</div><span class="q-type">Interpretação · Naturário</span>
+  <div class="q-text">De acordo com o texto sobre o "Naturário", o ano de 2020 foi marcado por qual situação mundial que inspirou o projeto?</div>
+  <input type="text" class="blank-input" id="inp-q3" placeholder="Digite sua resposta...">
+  <button class="check-btn" id="btn-q3">Verificar resposta</button>
+  <div class="feedback" id="fb-q3"></div>
+</div>
+
+<!-- Q4 -->
+<div class="card" id="q4">
+  <div class="q-num">4</div><span class="q-type">Interpretação · Naturário</span>
+  <div class="q-text">O "Naturário" incentiva as crianças a fazerem o quê diariamente?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q4" data-correct="true" data-msg="Isso mesmo! O Naturário incentiva registrar uma ação de aproximação com a natureza todo dia." data-tip="">Registrar uma ação de aproximação com a natureza</button>
+    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! O texto não fala sobre isso." data-tip="💡 Pense na hashtag #TodoDiaLáForaSCN.">Assistir desenhos animados</button>
+    <button class="opt-btn" data-q="q4" data-correct="false" data-msg="Errado! O texto não fala sobre isso." data-tip="💡 Pense na hashtag #TodoDiaLáForaSCN.">Fazer compras no mercado</button>
+  </div>
+  <div class="feedback" id="fb-q4"></div>
+</div>
+
+<!-- Q5 -->
+<div class="card" id="q5">
+  <div class="q-num">5</div><span class="q-type">Interpretação · Mafalda</span>
+  <div class="q-hint">📖 Nas tirinhas, Mafalda e Miguelito observam as árvores de um parque.</div>
+  <div class="q-text">Na tirinha, o que Mafalda compara à cor verde das árvores?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q5" data-correct="true" data-msg="Isso mesmo! Mafalda brinca dizendo que as árvores verdes parecem um sinal de trânsito." data-tip="">O sinal de trânsito (semáforo)</button>
+    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! A tirinha não fala sobre esse assunto." data-tip="💡 Pense em Miguelito perguntando sobre atravessar a rua.">Uma bandeira</button>
+    <button class="opt-btn" data-q="q5" data-correct="false" data-msg="Errado! A tirinha não fala sobre esse assunto." data-tip="💡 Pense em Miguelito perguntando sobre atravessar a rua.">Um uniforme escolar</button>
+  </div>
+  <div class="feedback" id="fb-q5"></div>
+</div>
+
+<!-- Q6 blank -->
+<div class="card" id="q6">
+  <div class="q-num">6</div><span class="q-type">Sílaba tônica</span>
+  <div class="q-text">A palavra "MARINHA" tem a sílaba tônica em ma-RI-nha (penúltima). É uma palavra <strong>______</strong>.</div>
+  <input type="text" class="blank-input" id="inp-q6" placeholder="Digite a classificação...">
+  <button class="check-btn" id="btn-q6">Verificar resposta</button>
+  <div class="feedback" id="fb-q6"></div>
+</div>
+
+<!-- Q7 -->
+<div class="card" id="q7">
+  <div class="q-num">7</div><span class="q-type">Sílaba tônica</span>
+  <div class="q-text">Qual destas palavras tem a sílaba tônica na antepenúltima posição (proparoxítona)?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q7" data-correct="true" data-msg="Isso mesmo! Óculo (Ó-cu-lo) é proparoxítona." data-tip="">óculo</button>
+    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Água (Á-gua) é paroxítona." data-tip="💡 Conte as sílabas de 'óculo': Ó-cu-lo.">água</button>
+    <button class="opt-btn" data-q="q7" data-correct="false" data-msg="Errado! Jiló (ji-LÓ) é oxítona." data-tip="💡 Conte as sílabas de 'óculo': Ó-cu-lo.">jiló</button>
+  </div>
+  <div class="feedback" id="fb-q7"></div>
+</div>
+
+<!-- Q8 blank -->
+<div class="card" id="q8">
+  <div class="q-num">8</div><span class="q-type">Sílaba tônica</span>
+  <div class="q-text">Complete: contamos a posição da sílaba tônica sempre de trás para a frente, ou seja, do <strong>______</strong> para o início da palavra.</div>
+  <input type="text" class="blank-input" id="inp-q8" placeholder="Digite a palavra...">
+  <button class="check-btn" id="btn-q8">Verificar resposta</button>
+  <div class="feedback" id="fb-q8"></div>
+</div>
+
+<!-- Q9 -->
+<div class="card" id="q9">
+  <div class="q-num">9</div><span class="q-type">Uso do R ou RR</span>
+  <div class="q-text">Por que a palavra "honra" se escreve com um R só, mesmo tendo som forte?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q9" data-correct="true" data-msg="Isso mesmo! Depois de consoante, usa-se sempre um R só, mesmo com som forte." data-tip="">Porque o R vem depois de uma consoante (N)</button>
+    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! Existe uma explicação clara para essa regra." data-tip="💡 Observe a letra 'N' logo antes do R.">Porque é uma exceção sem motivo</button>
+    <button class="opt-btn" data-q="q9" data-correct="false" data-msg="Errado! A letra H não influencia essa regra." data-tip="💡 Observe a letra 'N' logo antes do R.">Porque a palavra começa com H</button>
+  </div>
+  <div class="feedback" id="fb-q9"></div>
+</div>
+
+<!-- Q10 -->
+<div class="card" id="q10">
+  <div class="q-num">10</div><span class="q-type">Uso do R ou RR</span>
+  <div class="q-text">Complete a frase com a palavra correta: "Nós fomos de ______ até a praia." (veículo)</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q10" data-correct="true" data-msg="Isso mesmo! Carro (som forte entre vogais) se escreve com RR." data-tip="">carro</button>
+    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Caro significa 'de preço alto', não é o veículo." data-tip="💡 Pense no veículo usado para viajar.">caro</button>
+    <button class="opt-btn" data-q="q10" data-correct="false" data-msg="Errado! Carinho não é um meio de transporte." data-tip="💡 Pense no veículo usado para viajar.">carinho</button>
+  </div>
+  <div class="feedback" id="fb-q10"></div>
+</div>
+
+<!-- Q11 blank -->
+<div class="card" id="q11">
+  <div class="q-num">11</div><span class="q-type">Uso do R ou RR</span>
+  <div class="q-text">Complete: "Esse relógio é muito ______." (de preço alto)</div>
+  <input type="text" class="blank-input" id="inp-q11" placeholder="Digite a palavra...">
+  <button class="check-btn" id="btn-q11">Verificar resposta</button>
+  <div class="feedback" id="fb-q11"></div>
+</div>
+
+<!-- Q12 -->
+<div class="card" id="q12">
+  <div class="q-num">12</div><span class="q-type">Organização de frases</span>
+  <div class="q-text">Observe as palavras soltas: "abriu" — "Miguelito" — "o sinal". Qual é a frase corretamente organizada?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q12" data-correct="true" data-msg="Isso mesmo! Sujeito (Miguelito) + verbo (abriu) + complemento (o sinal)." data-tip="">Miguelito abriu o sinal.</button>
+    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Essa ordem não é natural na língua portuguesa." data-tip="💡 Pense em quem primeiro pratica a ação.">O sinal Miguelito abriu.</button>
+    <button class="opt-btn" data-q="q12" data-correct="false" data-msg="Errado! Essa ordem embaralha a frase." data-tip="💡 Pense em quem primeiro pratica a ação.">Abriu sinal o Miguelito.</button>
+  </div>
+  <div class="feedback" id="fb-q12"></div>
+</div>
+
+<!-- Q13 -->
+<div class="card" id="q13">
+  <div class="q-num">13</div><span class="q-type">Organização de frases</span>
+  <div class="q-text">Na frase "Miguelito abriu o sinal", o verbo é:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! Miguelito é o sujeito, quem pratica a ação." data-tip="💡 O verbo indica a ação praticada.">Miguelito</button>
+    <button class="opt-btn" data-q="q13" data-correct="true" data-msg="Isso mesmo! Abriu é o verbo, indicando a ação." data-tip="">abriu</button>
+    <button class="opt-btn" data-q="q13" data-correct="false" data-msg="Errado! 'O sinal' é o complemento da frase." data-tip="💡 O verbo indica a ação praticada.">o sinal</button>
+  </div>
+  <div class="feedback" id="fb-q13"></div>
+</div>
+
+<!-- Q14 blank -->
+<div class="card" id="q14">
+  <div class="q-num">14</div><span class="q-type">Organização de frases</span>
+  <div class="q-text">Na frase "As árvores já ficaram verdes", o que vem ANTES do verbo "ficaram"?</div>
+  <input type="text" class="blank-input" id="inp-q14" placeholder="Digite a expressão...">
+  <button class="check-btn" id="btn-q14">Verificar resposta</button>
+  <div class="feedback" id="fb-q14"></div>
+</div>
+
+<!-- Q15 -->
+<div class="card" id="q15">
+  <div class="q-num">15</div><span class="q-type">Organização de frases</span>
+  <div class="q-text">O que geralmente indica a palavra ou expressão que vem DEPOIS do verbo em uma frase?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q15" data-correct="true" data-msg="Isso mesmo! Depois do verbo geralmente vem o complemento (o quê, como, onde, quando)." data-tip="">O complemento (o quê, como, onde, quando)</button>
+    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! O sujeito geralmente vem antes do verbo." data-tip="💡 Pense na frase 'Miguelito abriu o sinal'.">Quem pratica a ação (sujeito)</button>
+    <button class="opt-btn" data-q="q15" data-correct="false" data-msg="Errado! Isso não tem relação com a estrutura da frase." data-tip="💡 Pense na frase 'Miguelito abriu o sinal'.">O título do parágrafo</button>
+  </div>
+  <div class="feedback" id="fb-q15"></div>
+</div>
+
+<!-- Q16 -->
+<div class="card" id="q16">
+  <div class="q-num">16</div><span class="q-type">Interpretação · Mafalda</span>
+  <div class="q-text">Qual é a finalidade principal de uma tirinha (quadrinho curto), como as da Mafalda?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q16" data-correct="true" data-msg="Isso mesmo! Tirinhas contam uma cena curta, muitas vezes com humor ou reflexão." data-tip="">Contar uma cena curta, com humor ou reflexão</button>
+    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Tirinhas não têm essa finalidade." data-tip="💡 Pense no formato de quadrinhos com poucas falas.">Dar uma receita culinária</button>
+    <button class="opt-btn" data-q="q16" data-correct="false" data-msg="Errado! Tirinhas não têm essa finalidade." data-tip="💡 Pense no formato de quadrinhos com poucas falas.">Vender um produto</button>
+  </div>
+  <div class="feedback" id="fb-q16"></div>
+</div>
+
+<!-- Q17 blank -->
+<div class="card" id="q17">
+  <div class="q-num">17</div><span class="q-type">Sílaba tônica</span>
+  <div class="q-text">A palavra "FÁCIL" tem a sílaba tônica em FÁ-cil (penúltima). É uma palavra <strong>______</strong>.</div>
+  <input type="text" class="blank-input" id="inp-q17" placeholder="Digite a classificação...">
+  <button class="check-btn" id="btn-q17">Verificar resposta</button>
+  <div class="feedback" id="fb-q17"></div>
+</div>
+
+<!-- Q18 -->
+<div class="card" id="q18">
+  <div class="q-num">18</div><span class="q-type">Sílaba tônica</span>
+  <div class="q-text">Assinale a alternativa que apresenta uma palavra oxítona:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q18" data-correct="true" data-msg="Isso mesmo! Jiló (ji-LÓ) tem a tônica na última sílaba." data-tip="">jiló</button>
+    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Fácil é paroxítona." data-tip="💡 Pense em qual dessas termina com o som mais forte.">fácil</button>
+    <button class="opt-btn" data-q="q18" data-correct="false" data-msg="Errado! Óculo é proparoxítona." data-tip="💡 Pense em qual dessas termina com o som mais forte.">óculo</button>
+  </div>
+  <div class="feedback" id="fb-q18"></div>
+</div>
+
+<!-- Q19 reflection -->
+<div class="card reflect" id="q19">
+  <div class="q-num">19</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+  <div class="q-text">Na sua opinião, por que escrever um diário (como o da Maura ou o Naturário) pode ajudar uma pessoa a entender melhor seus sentimentos e experiências?</div>
+  <textarea class="blank-input" id="inp-q19" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q19">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q19"></div>
+</div>
+
+<!-- Q20 reflection -->
+<div class="card reflect" id="q20">
+  <div class="q-num">20</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+  <div class="q-text">Escreva uma frase, com no mínimo 5 palavras, sobre algo que você observou na natureza recentemente. Depois, identifique o verbo dela.</div>
+  <textarea class="blank-input" id="inp-q20" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q20">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q20"></div>
+</div>
+
+<!-- Q21 reflection -->
+<div class="card reflect" id="q21">
+  <div class="q-num">21</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+  <div class="q-text">Escolha uma palavra de casa e classifique-a como oxítona, paroxítona ou proparoxítona, explicando por quê.</div>
+  <textarea class="blank-input" id="inp-q21" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q21">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q21"></div>
+</div>
+
+<button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
+
+<div class="result-panel" id="resultPanel">
+  <div class="result-big" id="resultEmoji">🎉</div>
+  <div class="result-grade" id="resultGrade"></div>
+  <div class="result-grade-label" style="font-size:0.75rem;opacity:0.55;margin-bottom:2px;">pontos</div>
+  <div class="result-grade-label" id="resultGradeLabel"></div>
+  <div class="result-msg" id="resultMsg"></div>
+  <div class="result-score" id="resultScore"></div>
+  <div class="result-actions">
+    <button class="retry-btn" onclick="location.reload()">Tentar de novo 🔄</button>
+    <a href="gabarito.html" class="gabarito-link">📋 Ver Gabarito</a>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <a href="nivel2_intermediario.html" class="btn-prev">← Nível 2</a>
+  <a href="index.html" class="btn-home-only">🏠</a>
+  <a href="gabarito.html" class="btn-next">📋 Gabarito →</a>
+</div>
+</div>
+
+<div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+var score = 0;
+var answered = {};
+var total = 18;
+
+var blankCfg = {
+  'q3':  { accepts: ['isolamento social','isolamento','pandemia'], ok: 'Isso mesmo! O ano de 2020 foi marcado pelo isolamento social (pandemia), o que inspirou o projeto.', nok: 'A resposta correta é: isolamento social (pandemia).', tip: '💡 Pense no motivo pelo qual as crianças ficaram mais tempo em casa em 2020.' },
+  'q6':  { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
+  'q8':  { accepts: ['final','fim'], ok: 'Isso mesmo! Contamos sempre do final para o início da palavra.', nok: 'A resposta correta é: final (ou fim).', tip: '💡 Pense em contar as sílabas de trás para frente.' },
+  'q11': { accepts: ['caro'], ok: 'Isso mesmo! Caro (som fraco entre vogais) se escreve com um R só.', nok: 'A resposta correta é: caro.', tip: '💡 Compare com "carro" — som forte, RR.' },
+  'q14': { accepts: ['as arvores','as árvores','arvores','árvores'], ok: 'Isso mesmo! "As árvores" é o sujeito, que vem antes do verbo.', nok: 'A resposta correta é: as árvores.', tip: '💡 Pense em quem pratica a ação de "ficar verde".' },
+  'q17': { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
+};
+
+var reflectionModel = {
+  'q19': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
+  'q20': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
+  'q21': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
+};
+
+function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
+  var fb = document.getElementById('fb-' + qid);
+  if (isCorrect) {
+    fb.innerHTML = '<span class="fb-answer">✅ ' + okMsg + '</span>';
+    fb.className = 'feedback show ok';
+  } else {
+    fb.innerHTML = '<span class="fb-answer">❌ ' + nokMsg + '</span>' + (tipMsg ? '<span class="fb-tip">' + tipMsg + '</span>' : '');
+    fb.className = 'feedback show nok';
+  }
+}
+
+document.querySelectorAll('.opt-btn').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var qid = btn.dataset.q;
+    if (answered[qid]) return;
+    answered[qid] = true;
+    var correct = btn.dataset.correct === 'true';
+    document.getElementById(qid).querySelectorAll('.opt-btn').forEach(function(b) { b.classList.add('disabled'); });
+    if (correct) {
+      btn.classList.add('correct'); score++;
+      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
+      showFeedback(qid, true, btn.dataset.msg, '', '');
+    } else {
+      btn.classList.add('wrong');
+      showFeedback(qid, false, '', btn.dataset.msg, btn.dataset.tip);
+    }
+  });
+});
+
+Object.keys(blankCfg).forEach(function(qid) {
+  var btn = document.getElementById('btn-' + qid);
+  if (!btn) return;
+  btn.addEventListener('click', function() {
+    if (answered[qid]) return;
+    answered[qid] = true;
+    btn.disabled = true;
+    var inp = document.getElementById('inp-' + qid);
+    var val = inp.value.trim().toLowerCase().replace(/[.!?]$/, '');
+    var cfg = blankCfg[qid];
+    if (cfg.accepts.indexOf(val) !== -1) {
+      inp.classList.add('correct-input'); score++;
+      document.getElementById('scoreDisplay').textContent = score + ' / ' + total;
+      showFeedback(qid, true, cfg.ok, '', '');
+    } else {
+      inp.classList.add('wrong-input');
+      showFeedback(qid, false, '', cfg.nok, cfg.tip);
+    }
+  });
+});
+
+['q19','q20','q21'].forEach(function(qid) {
+  var btn = document.getElementById('btn-' + qid);
+  btn.addEventListener('click', function() {
+    btn.disabled = true;
+    var fb = document.getElementById('fb-' + qid);
+    fb.innerHTML = '<span class="fb-answer">💡 ' + reflectionModel[qid] + '</span>';
+    fb.className = 'feedback show model';
+  });
+});
+
+document.getElementById('finishBtn').addEventListener('click', function() {
+  var panel = document.getElementById('resultPanel');
+  panel.classList.add('show');
+  var nota = Math.round((score / total) * 100);
+  var emoji, msg, gradeLabel;
+  if (nota === 100)     { emoji = '🏆'; msg = 'Sensacional! Você dominou o nível avançado! 🌟'; gradeLabel = 'PERFEITO!'; }
+  else if (nota >= 90)  { emoji = '🎉'; msg = 'Incrível! Quase perfeito, mande ver na prova! 💪'; gradeLabel = 'EXCELENTE!'; }
+  else if (nota >= 75)  { emoji = '😄'; msg = 'Muito bem! Você está pronta(o) para a prova! 🎯'; gradeLabel = 'MUITO BOM!'; }
+  else if (nota >= 60)  { emoji = '😊'; msg = 'Bom trabalho! Revise as dicas e tente de novo!'; gradeLabel = 'BOM!'; }
+  else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Releia o resumo com calma!'; gradeLabel = 'PODE MAIS!'; }
+  else                   { emoji = '📚'; msg = 'Não desista! Volte ao resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
+  document.getElementById('resultEmoji').textContent = emoji;
+  document.getElementById('resultGrade').textContent = score + ' / ' + total;
+  document.getElementById('resultGradeLabel').textContent = gradeLabel;
+  document.getElementById('resultMsg').textContent = msg;
+  document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões que valem ponto.';
+  panel.scrollIntoView({ behavior: 'smooth' });
+});
+
+function downloadPDF() {
+  var btn = document.getElementById('pdfBtn');
+  var originalText = btn.textContent;
+  btn.textContent = '⏳ Gerando PDF...';
+  btn.disabled = true;
+  document.body.classList.add('pdf-export');
+  var opt = {
+    margin: 12,
+    filename: 'Portugues_Nivel3_Avancado.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] }
+  };
+  html2pdf().set(opt).from(document.body).save().then(function() {
+    document.body.classList.remove('pdf-export');
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }).catch(function(err) {
+    document.body.classList.remove('pdf-export');
+    btn.textContent = originalText;
+    btn.disabled = false;
+    alert('Nao foi possivel gerar o PDF. Tente novamente.');
+  });
+}
+</script>
+</body>
+</html>

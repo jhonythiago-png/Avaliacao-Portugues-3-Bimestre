@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>📋 Gabarito – Português</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f6f0fb; min-height: 100vh; padding-bottom: 40px; }
+.top-nav { background: #241638; padding: 10px 16px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.top-nav a { color: #d8b4fe; font-size: 0.8rem; font-weight: 700; text-decoration: none; background: rgba(124,58,237,0.25); border: 1px solid rgba(124,58,237,0.4); padding: 5px 12px; border-radius: 20px; }
+.top-nav span { color: rgba(255,255,255,0.45); font-size: 0.78rem; }
+.hero { background: linear-gradient(145deg,#1e1033,#241638,#6d28d9); padding: 30px 20px 22px; text-align: center; }
+.hero-icon { font-size: 2.8rem; display: block; margin-bottom: 10px; }
+.hero h1 { font-size: 1.5rem; font-weight: 900; color: white; }
+.hero p  { font-size: 0.88rem; color: rgba(255,255,255,0.6); margin-top: 6px; }
+.hero-pill { display: inline-block; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.8); font-size: 0.72rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; margin-top: 12px; }
+.wrap { padding: 16px 14px 0; max-width: 480px; margin: 0 auto; }
+.print-btn-wrap { text-align: right; margin-bottom: 12px; }
+.print-btn { display: inline-flex; align-items: center; gap: 6px; padding: 7px 16px; background: transparent; border: 1px solid rgba(124,58,237,0.35); border-radius: 20px; font-size: 0.78rem; font-family: inherit; font-weight: 600; color: rgba(124,58,237,0.7); cursor: pointer; }
+.level-block { margin-bottom: 22px; }
+.level-header { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 16px 16px 0 0; }
+.lv1 { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+.lv2 { background: linear-gradient(135deg,#f7971e,#ffd200); }
+.lv3 { background: linear-gradient(135deg,#be185d,#7c3aed); }
+.level-icon { font-size: 1.6rem; }
+.level-title { font-size: 1rem; font-weight: 900; color: white; }
+.level-sub   { font-size: 0.75rem; color: rgba(255,255,255,0.85); margin-top: 2px; }
+.answers-list { background: white; border-radius: 0 0 16px 16px; border: 1.5px solid #ecdcfa; border-top: none; overflow: visible; }
+.answer-item { display: flex; gap: 12px; align-items: flex-start; padding: 13px 16px; border-bottom: 1px solid #f6f0fb; }
+.answer-item:last-child { border-bottom: none; }
+.ans-num { width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: 900; color: white; margin-top: 1px; }
+.lv1 .ans-num { background: linear-gradient(135deg,#7c3aed,#a855f7); }
+.lv2 .ans-num { background: linear-gradient(135deg,#f7971e,#ffd200); color: #333; }
+.lv3 .ans-num { background: linear-gradient(135deg,#be185d,#7c3aed); }
+.ans-body { flex: 1; }
+.ans-q { color: #a293b0; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
+.ans-a { color: #241638; font-weight: 800; }
+.ans-exp { color: #5c4a6e; margin-top: 3px; font-size: 0.87rem; line-height: 1.5; }
+.ans-tip { display: inline-block; margin-top: 5px; background: #f5edfd; border-radius: 8px; padding: 4px 10px; font-size: 0.78rem; color: #7c3aed; font-weight: 600; }
+.bottom-nav { display: flex; gap: 10px; padding: 0; margin: 20px 0 10px; }
+.bottom-nav a { flex: 1; padding: 13px 10px; border-radius: 14px; text-decoration: none; text-align: center; font-size: 0.85rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 6px; }
+.btn-prev { background: #f5edfd; border: 1.5px solid #ecdcfa; color: #4b3a5f !important; }
+.btn-next { background: linear-gradient(135deg,#7c3aed,#a855f7); color: white !important; }
+.btn-home-only { background: rgba(124,58,237,0.08); border: 1.5px solid rgba(124,58,237,0.2); color: #7c3aed !important; flex: 0.6; }
+.credit { text-align: center; padding: 16px 14px 8px; font-size: 0.75rem; color: #bbb; }
+.credit strong { color: #7c3aed; }
+
+/* ---- PDF EXPORT (JS-generated) ---- */
+body.pdf-export .top-nav, body.pdf-export .print-btn-wrap, body.pdf-export .bottom-nav { display: none !important; }
+body.pdf-export { background: white !important; color: #111 !important; padding-bottom: 0 !important; }
+body.pdf-export * { background-color: transparent !important; background-image: none !important; color: #111 !important; box-shadow: none !important; }
+body.pdf-export .answers-list { border: 1px solid #ccc !important; }
+body.pdf-export .answer-item { break-inside: avoid !important; page-break-inside: avoid !important; }
+body.pdf-export .level-header { page-break-after: avoid !important; break-after: avoid !important; }
+body.pdf-export .hero { padding: 14px 20px !important; }
+body.pdf-export .level-header.lv1 { background: linear-gradient(135deg,#7c3aed,#a855f7) !important; }
+body.pdf-export .level-header.lv2 { background: linear-gradient(135deg,#f7971e,#ffd200) !important; }
+body.pdf-export .level-header.lv3 { background: linear-gradient(135deg,#be185d,#7c3aed) !important; }
+body.pdf-export .credit { color: #888 !important; }
+</style>
+</head>
+<body>
+<div class="top-nav">
+  <a href="index.html">🏠 Início</a>
+  <span>📋 Gabarito — Português</span>
+  <div style="width:80px;"></div>
+</div>
+<div class="hero">
+  <span class="hero-icon">📋</span>
+  <h1>Gabarito Completo</h1>
+  <p>Português · Amigos da Natureza — Caps. 7 e 8</p>
+  <div class="hero-pill">Todos os níveis com explicações</div>
+</div>
+<div class="wrap">
+<div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
+
+<!-- NÍVEL 1 -->
+<div class="level-block">
+  <div class="level-header lv1"><div class="level-icon">⭐</div><div><div class="level-title">Nível 1 — Básico</div><div class="level-sub">14 questões · Conceitos fundamentais</div></div></div>
+  <div class="answers-list lv1">
+    <div class="answer-item"><div class="ans-num lv1">1</div><div class="ans-body"><div class="ans-q">"Ângulo" (antepenúltima sílaba tônica)</div><div class="ans-a">Proparoxítona</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">2</div><div class="ans-body"><div class="ans-q">Tônica na última sílaba</div><div class="ans-a">Oxítonas</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">3</div><div class="ans-body"><div class="ans-q">Tônica na penúltima sílaba</div><div class="ans-a">Paroxítonas</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">4</div><div class="ans-body"><div class="ans-q">"Táxi" — posição da tônica</div><div class="ans-a">Penúltima</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">5</div><div class="ans-body"><div class="ans-q">Palavra proparoxítona</div><div class="ans-a">Época</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">6</div><div class="ans-body"><div class="ans-q">Som do R no início da palavra</div><div class="ans-a">Forte</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">7</div><div class="ans-body"><div class="ans-q">R forte entre vogais</div><div class="ans-a">RR</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">8</div><div class="ans-body"><div class="ans-q">"Carro" se escreve com</div><div class="ans-a">RR</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">9</div><div class="ans-body"><div class="ans-q">"Caro" se escreve com</div><div class="ans-a">Um R só</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">10</div><div class="ans-body"><div class="ans-q">Finalidade de um diário</div><div class="ans-a">Compartilhar vivências e sentimentos</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">11</div><div class="ans-body"><div class="ans-q">Destino da viagem de Maura</div><div class="ans-a">Galápagos</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">12</div><div class="ans-body"><div class="ans-q">Criador de Mafalda</div><div class="ans-a">Quino</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">13</div><div class="ans-body"><div class="ans-q">Perguntas Quem/O quê/Quando ajudam a</div><div class="ans-a">Montar a frase com sentido completo</div></div></div>
+    <div class="answer-item"><div class="ans-num lv1">14</div><div class="ans-body"><div class="ans-q">"O sinal" depois do verbo indica</div><div class="ans-a">O que foi aberto (complemento)</div></div></div>
+  </div>
+</div>
+
+<!-- NÍVEL 2 -->
+<div class="level-block">
+  <div class="level-header lv2"><div class="level-icon">🔥</div><div><div class="level-title">Nível 2 — Intermediário</div><div class="level-sub">14 questões · Aprofundamento</div></div></div>
+  <div class="answers-list lv2">
+    <div class="answer-item"><div class="ans-num lv2">1</div><div class="ans-body"><div class="ans-q">R forte entre vogais</div><div class="ans-a">RR</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">2</div><div class="ans-body"><div class="ans-q">"Honra" com um R só porque</div><div class="ans-a">O R vem depois de uma consoante (N)</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">3</div><div class="ans-body"><div class="ans-q">Palavra com R fraco entre vogais</div><div class="ans-a">hora</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">4</div><div class="ans-body"><div class="ans-q">"Incrível" (penúltima sílaba tônica)</div><div class="ans-a">Paroxítona</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">5</div><div class="ans-body"><div class="ans-q">Palavra oxítona</div><div class="ans-a">feliz</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">6</div><div class="ans-body"><div class="ans-q">Outra finalidade do Diário de Maura</div><div class="ans-a">Provocar humor no leitor</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">7</div><div class="ans-body"><div class="ans-q">Sobrenome da criadora do Naturário</div><div class="ans-a">Thomé</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">8</div><div class="ans-body"><div class="ans-q">Hashtag do Naturário</div><div class="ans-a">#TodoDiaLáForaSCN</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">9</div><div class="ans-body"><div class="ans-q">Mafalda é uma menina</div><div class="ans-a">Questionadora e inquieta</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">10</div><div class="ans-body"><div class="ans-q">Frase organizada corretamente</div><div class="ans-a">As crianças brincaram no parque.</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">11</div><div class="ans-body"><div class="ans-q">O que vem antes do verbo</div><div class="ans-a">O sujeito (quem pratica a ação)</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">12</div><div class="ans-body"><div class="ans-q">O que vem depois do verbo</div><div class="ans-a">O complemento</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">13</div><div class="ans-body"><div class="ans-q">Som do R no início da palavra</div><div class="ans-a">Forte</div></div></div>
+    <div class="answer-item"><div class="ans-num lv2">14</div><div class="ans-body"><div class="ans-q">Palavra proparoxítona</div><div class="ans-a">plácido</div></div></div>
+  </div>
+</div>
+
+<!-- NÍVEL 3 -->
+<div class="level-block">
+  <div class="level-header lv3"><div class="level-icon">💎</div><div><div class="level-title">Nível 3 — Avançado</div><div class="level-sub">21 questões · Leitura e reflexão</div></div></div>
+  <div class="answers-list lv3">
+    <div class="answer-item"><div class="ans-num lv3">1</div><div class="ans-body"><div class="ans-q">Arquipélago visitado por Maura</div><div class="ans-a">Galápagos</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">2</div><div class="ans-body"><div class="ans-q">Formato do texto de Maura</div><div class="ans-a">Diário</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">3</div><div class="ans-body"><div class="ans-q">Situação mundial em 2020</div><div class="ans-a">Isolamento social (pandemia)</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">4</div><div class="ans-body"><div class="ans-q">O que o Naturário incentiva</div><div class="ans-a">Registrar uma ação de aproximação com a natureza</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">5</div><div class="ans-body"><div class="ans-q">O que Mafalda compara ao verde das árvores</div><div class="ans-a">O sinal de trânsito</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">6</div><div class="ans-body"><div class="ans-q">"Marinha" — classificação</div><div class="ans-a">Paroxítona</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">7</div><div class="ans-body"><div class="ans-q">Palavra proparoxítona</div><div class="ans-a">óculo</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">8</div><div class="ans-body"><div class="ans-q">Contamos a sílaba tônica a partir do</div><div class="ans-a">Final (fim) da palavra</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">9</div><div class="ans-body"><div class="ans-q">"Honra" com um R só porque</div><div class="ans-a">O R vem depois de consoante (N)</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">10</div><div class="ans-body"><div class="ans-q">"Nós fomos de ___ até a praia" (veículo)</div><div class="ans-a">carro</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">11</div><div class="ans-body"><div class="ans-q">"Esse relógio é muito ___" (preço alto)</div><div class="ans-a">caro</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">12</div><div class="ans-body"><div class="ans-q">Frase organizada corretamente</div><div class="ans-a">Miguelito abriu o sinal.</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">13</div><div class="ans-body"><div class="ans-q">Verbo da frase "Miguelito abriu o sinal"</div><div class="ans-a">abriu</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">14</div><div class="ans-body"><div class="ans-q">Antes do verbo "ficaram"</div><div class="ans-a">As árvores</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">15</div><div class="ans-body"><div class="ans-q">O que vem depois do verbo</div><div class="ans-a">O complemento</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">16</div><div class="ans-body"><div class="ans-q">Finalidade de uma tirinha</div><div class="ans-a">Contar uma cena curta, com humor ou reflexão</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">17</div><div class="ans-body"><div class="ans-q">"Fácil" — classificação</div><div class="ans-a">Paroxítona</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">18</div><div class="ans-body"><div class="ans-q">Palavra oxítona</div><div class="ans-a">jiló</div></div></div>
+    <div class="answer-item"><div class="ans-num lv3">19</div><div class="ans-body"><div class="ans-q">💭 Por que escrever um diário (reflexão)</div><div class="ans-a">Ajuda a organizar pensamentos e sentimentos</div><span class="ans-tip">Sem gabarito fechado — resposta pessoal</span></div></div>
+    <div class="answer-item"><div class="ans-num lv3">20</div><div class="ans-body"><div class="ans-q">💭 Frase sobre a natureza + verbo (reflexão)</div><div class="ans-a">Ex: "As flores do meu quintal cresceram." Verbo: cresceram</div><span class="ans-tip">Qualquer frase com verbo bem identificado vale!</span></div></div>
+    <div class="answer-item"><div class="ans-num lv3">21</div><div class="ans-body"><div class="ans-q">💭 Classificar uma palavra de casa (reflexão)</div><div class="ans-a">Ex: "sofá" (so-FÁ) é oxítona</div><span class="ans-tip">O importante é explicar corretamente o porquê.</span></div></div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <a href="nivel3_avancado.html" class="btn-prev">← Nível 3</a>
+  <a href="index.html" class="btn-home-only">🏠</a>
+  <a href="resumo_conteudo.html" class="btn-next">📚 Resumo →</a>
+</div>
+</div>
+<div class="credit">Desenvolvido por <strong>Jhony Beraldo</strong></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function downloadPDF() {
+  var btn = document.getElementById('pdfBtn');
+  var originalText = btn.textContent;
+  btn.textContent = '⏳ Gerando PDF...';
+  btn.disabled = true;
+  document.body.classList.add('pdf-export');
+  var opt = {
+    margin: 12,
+    filename: 'Portugues_Gabarito.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+    pagebreak: { mode: ['css', 'legacy'] }
+  };
+  html2pdf().set(opt).from(document.body).save().then(function() {
+    document.body.classList.remove('pdf-export');
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }).catch(function(err) {
+    document.body.classList.remove('pdf-export');
+    btn.textContent = originalText;
+    btn.disabled = false;
+    alert('Nao foi possivel gerar o PDF. Tente novamente.');
+  });
+}
+</script>
+</body>
+</html>
