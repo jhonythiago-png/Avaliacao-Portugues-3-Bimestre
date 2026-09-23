@@ -93,14 +93,14 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 1</div>
   <h1>⭐ Básico</h1>
-  <p>Interpretação, frases, gêneros textuais, ortografia e mais — 28 questões</p>
+  <p>Interpretação, R, sílaba tônica, verbos, verbete e mais — 36 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 28</span>
+  <span class="score-num" id="scoreDisplay">0 / 36</span>
 </div>
 
 <!-- Q1 -->
@@ -439,6 +439,102 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q28"></div>
 </div>
 
+<!-- Q29 -->
+<div class="card" id="q29">
+  <div class="q-num">29</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Qual destas palavras tem R inicial (no começo da palavra)?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q29" data-correct="true" data-msg="Isso mesmo! 'Relógio' começa com R." data-tip="">Relógio</button>
+    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! O R está entre vogais aqui." data-tip="💡 Pense em qual palavra COMEÇA com a letra R.">Careta</button>
+    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! O R está no final aqui." data-tip="💡 Pense em qual palavra COMEÇA com a letra R.">Cantar</button>
+  </div>
+  <div class="feedback" id="fb-q29"></div>
+</div>
+
+<!-- Q30 -->
+<div class="card" id="q30">
+  <div class="q-num">30</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Qual destas palavras tem R fraco entre vogais (escrito com um R só)?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q30" data-correct="true" data-msg="Isso mesmo! Em 'careta', o R está entre vogais com som fraco." data-tip="">Careta</button>
+    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! 'Correr' usa RR, som forte." data-tip="💡 Pense num R fraco, suave, entre duas vogais.">Correr</button>
+    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! 'Rainha' tem R inicial." data-tip="💡 Pense num R fraco, suave, entre duas vogais.">Rainha</button>
+  </div>
+  <div class="feedback" id="fb-q30"></div>
+</div>
+
+<!-- Q31 -->
+<div class="card" id="q31">
+  <div class="q-num">31</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Qual destas palavras usa RR (som forte entre vogais)?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q31" data-correct="true" data-msg="Isso mesmo! 'Correr' tem RR, som forte entre vogais." data-tip="">Correr</button>
+    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! 'Careta' tem R fraco, um R só." data-tip="💡 Pense na palavra com as duas letras R juntas.">Careta</button>
+    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! 'Porta' está em outra categoria." data-tip="💡 Pense na palavra com as duas letras R juntas.">Porta</button>
+  </div>
+  <div class="feedback" id="fb-q31"></div>
+</div>
+
+<!-- Q32 -->
+<div class="card" id="q32">
+  <div class="q-num">32</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Qual destas palavras tem R "entre consoante e vogal" (categoria 4), SEM ser um encontro consonantal como TR ou PR?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q32" data-correct="true" data-msg="Isso mesmo! Em 'porta', o R fica entre a vogal O e a consoante T, sem formar TR ou PR." data-tip="">Porta</button>
+    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! 'Tronco' tem o encontro consonantal TR — não entra nessa categoria." data-tip="💡 Cuidado com a pegadinha: TR e PR são encontros consonantais.">Tronco</button>
+    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! 'Prato' tem o encontro consonantal PR — não entra nessa categoria." data-tip="💡 Cuidado com a pegadinha: TR e PR são encontros consonantais.">Prato</button>
+  </div>
+  <div class="feedback" id="fb-q32"></div>
+</div>
+
+<!-- Q33 -->
+<div class="card" id="q33">
+  <div class="q-num">33</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Qual destas palavras tem R no final?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q33" data-correct="true" data-msg="Isso mesmo! Em 'cantar', o R é a última letra." data-tip="">Cantar</button>
+    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Rato' tem R inicial." data-tip="💡 Pense em qual palavra TERMINA com R.">Rato</button>
+    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Careta' tem R entre vogais." data-tip="💡 Pense em qual palavra TERMINA com R.">Careta</button>
+  </div>
+  <div class="feedback" id="fb-q33"></div>
+</div>
+
+<!-- Q34 -->
+<div class="card" id="q34">
+  <div class="q-num">34</div><span class="q-type">Interpretação de título</span>
+  <div class="q-text">Se um texto se chama "O morcego astuto", a palavra "astuto" quer dizer que o morcego era:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q34" data-correct="true" data-msg="Isso mesmo! Astuto significa esperto, inteligente." data-tip="">Esperto</button>
+    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Astuto não tem esse sentido." data-tip="💡 Pense em um animal que usa a inteligência para se safar de perigos.">Lento</button>
+    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Astuto não tem esse sentido." data-tip="💡 Pense em um animal que usa a inteligência para se safar de perigos.">Triste</button>
+  </div>
+  <div class="feedback" id="fb-q34"></div>
+</div>
+
+<!-- Q35 -->
+<div class="card" id="q35">
+  <div class="q-num">35</div><span class="q-type">Interpretação de expressão</span>
+  <div class="q-text">Na frase "a fuinha tinha olhos ótimos", isso significa que ela:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q35" data-correct="true" data-msg="Isso mesmo! 'Olhos ótimos' significa que ela enxergava muito bem." data-tip="">Enxergava muito bem</button>
+    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Não é sobre o tamanho dos olhos." data-tip="💡 Pense no que 'ótimos' quer dizer sobre a visão dela.">Tinha olhos muito grandes</button>
+    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Não é sobre fome." data-tip="💡 Pense no que 'ótimos' quer dizer sobre a visão dela.">Estava com fome</button>
+  </div>
+  <div class="feedback" id="fb-q35"></div>
+</div>
+
+<!-- Q36 -->
+<div class="card" id="q36">
+  <div class="q-num">36</div><span class="q-type">Verbete</span>
+  <div class="q-text">Qual é o verbete correto para o verbo "lançar"?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q36" data-correct="true" data-msg="Isso mesmo! Esse é o significado correto de 'lançar'." data-tip="">1. Jogar, atirar com força. 2. Mandar algo longe com força.</button>
+    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso descreve a palavra 'contemplar', não 'lançar'." data-tip="💡 Pense no significado de jogar algo com força.">1. Sentar e contemplar a natureza.</button>
+    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso descreve a palavra 'colocar', não 'lançar'." data-tip="💡 Pense no significado de jogar algo com força.">1. Colocar um objeto num lugar de preferência.</button>
+  </div>
+  <div class="feedback" id="fb-q36"></div>
+</div>
+
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
 
 <div class="result-panel" id="resultPanel">
@@ -467,7 +563,7 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 28;
+var total = 36;
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
   var fb = document.getElementById('fb-' + qid);
@@ -510,7 +606,7 @@ document.getElementById('finishBtn').addEventListener('click', function() {
   else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
   else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
   document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 28';
+  document.getElementById('resultGrade').textContent = score + ' / 36';
   document.getElementById('resultGradeLabel').textContent = gradeLabel;
   document.getElementById('resultMsg').textContent = msg;
   document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';

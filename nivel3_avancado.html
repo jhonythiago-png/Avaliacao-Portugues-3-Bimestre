@@ -109,15 +109,15 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 3</div>
   <h1>💎 Avançado</h1>
-  <p>Leitura, raciocínio e reflexão — 36 questões</p>
+  <p>Leitura, raciocínio e reflexão — 44 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="info-banner">💡 As questões de <strong>1 a 33</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
+<div class="info-banner">💡 As questões de <strong>1 a 41</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 33</span>
+  <span class="score-num" id="scoreDisplay">0 / 41</span>
 </div>
 
 <!-- Q1 -->
@@ -498,31 +498,132 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q33"></div>
 </div>
 
-<!-- Q34 reflection -->
-<div class="card reflect" id="q34">
-  <div class="q-num">34</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+<!-- Reading passage -->
+<div class="card" id="reading-passage-2">
+  <div class="q-type">📖 Leitura — A Tartaruga Precavida</div>
+  <div class="q-text" style="margin-top:8px;">Uma tartaruga vivia à beira de um lago e sempre carregava sua casca por perto, mesmo nos dias mais calmos. Um sapo curioso perguntou por que ela não deixava a casca de lado enquanto nadava.<br><br>
+  A tartaruga respondeu: "Quem tem pressa de se arrepender, corre sem pensar duas vezes."<br><br>
+  Pouco depois, uma garça sobrevoou o lago à procura de comida, e a tartaruga rapidamente se escondeu dentro da casca, segura.</div>
+</div>
+
+<!-- Q34 -->
+<div class="card" id="q34b">
+  <div class="q-num">34</div><span class="q-type">Interpretação de título</span>
+  <div class="q-text">No título "A Tartaruga Precavida", a palavra "precavida" significa que a personagem era:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q34b" data-correct="true" data-msg="Isso mesmo! Precavida significa cuidadosa, que se prevenia de perigos." data-tip="">Cuidadosa, que se prevenia de perigos</button>
+    <button class="opt-btn" data-q="q34b" data-correct="false" data-msg="Errado! Precavida não tem esse sentido." data-tip="💡 Pense em por que ela carregava a casca por perto sempre.">Distraída e desatenta</button>
+    <button class="opt-btn" data-q="q34b" data-correct="false" data-msg="Errado! Precavida não tem esse sentido." data-tip="💡 Pense em por que ela carregava a casca por perto sempre.">Apressada e afobada</button>
+  </div>
+  <div class="feedback" id="fb-q34b"></div>
+</div>
+
+<!-- Q35 -->
+<div class="card" id="q35b">
+  <div class="q-num">35</div><span class="q-type">Interpretação de expressão</span>
+  <div class="q-text">Na fala da tartaruga, "quem tem pressa de se arrepender, corre sem pensar duas vezes" quer dizer que:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q35b" data-correct="true" data-msg="Isso mesmo! Agir sem cuidado pode trazer arrependimento depois." data-tip="">Agir sem cuidado pode trazer arrependimento depois</button>
+    <button class="opt-btn" data-q="q35b" data-correct="false" data-msg="Errado! Não é sobre velocidade física." data-tip="💡 Pense na relação entre pressa e arrependimento.">É sempre bom correr o mais rápido possível</button>
+    <button class="opt-btn" data-q="q35b" data-correct="false" data-msg="Errado! Não é sobre isso." data-tip="💡 Pense na relação entre pressa e arrependimento.">Nadar é mais perigoso que correr</button>
+  </div>
+  <div class="feedback" id="fb-q35b"></div>
+</div>
+
+<!-- Q36 blank -->
+<div class="card" id="q36b">
+  <div class="q-num">36</div><span class="q-type">Interpretação</span>
+  <div class="q-text">Complete: no texto, o animal que ameaçava a tartaruga era a <strong>______</strong>.</div>
+  <input type="text" class="blank-input" id="inp-q36b" placeholder="Digite a palavra...">
+  <button class="check-btn" id="btn-q36b">Verificar resposta</button>
+  <div class="feedback" id="fb-q36b"></div>
+</div>
+
+<!-- Q37 -->
+<div class="card" id="q37">
+  <div class="q-num">37</div><span class="q-type">Interpretação de assunto</span>
+  <div class="q-text">Qual é o assunto principal desse texto?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q37" data-correct="true" data-msg="Isso mesmo! O texto mostra a importância de ser precavido." data-tip="">A importância de ser precavido e cuidadoso</button>
+    <button class="opt-btn" data-q="q37" data-correct="false" data-msg="Errado! O texto não é sobre isso." data-tip="💡 Pense no que a tartaruga fazia sempre, com a casca por perto.">A vida dos sapos em um lago</button>
+    <button class="opt-btn" data-q="q37" data-correct="false" data-msg="Errado! O texto não é sobre isso." data-tip="💡 Pense no que a tartaruga fazia sempre, com a casca por perto.">Como as garças caçam peixes</button>
+  </div>
+  <div class="feedback" id="fb-q37"></div>
+</div>
+
+<!-- Q38 -->
+<div class="card" id="q38">
+  <div class="q-num">38</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Na palavra "arrepender", o R representa um som:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q38" data-correct="true" data-msg="Isso mesmo! Por isso se escreve com RR — som forte entre vogais." data-tip="">Forte (por isso se escreve com RR)</button>
+    <button class="opt-btn" data-q="q38" data-correct="false" data-msg="Errado! Se fosse fraco, se escreveria com um R só." data-tip="💡 Observe: a palavra tem duas letras R juntas.">Fraco (por isso se escreve com um R só)</button>
+    <button class="opt-btn" data-q="q38" data-correct="false" data-msg="Errado! A palavra não tem R no início." data-tip="💡 Observe: a palavra tem duas letras R juntas.">R inicial</button>
+  </div>
+  <div class="feedback" id="fb-q38"></div>
+</div>
+
+<!-- Q39 -->
+<div class="card" id="q39">
+  <div class="q-num">39</div><span class="q-type">Verbete</span>
+  <div class="q-text">Ao procurar a palavra "precavida" no dicionário, você encontraria um texto chamado:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q39" data-correct="true" data-msg="Isso mesmo! O dicionário traz verbetes." data-tip="">Verbete</button>
+    <button class="opt-btn" data-q="q39" data-correct="false" data-msg="Errado! Diário é outro gênero textual." data-tip="💡 Pense no nome do texto do dicionário que explica uma palavra.">Diário</button>
+    <button class="opt-btn" data-q="q39" data-correct="false" data-msg="Errado! Tirinha é outro gênero textual." data-tip="💡 Pense no nome do texto do dicionário que explica uma palavra.">Tirinha</button>
+  </div>
+  <div class="feedback" id="fb-q39"></div>
+</div>
+
+<!-- Q40 -->
+<div class="card" id="q40">
+  <div class="q-num">40</div><span class="q-type">Verbo AM/ÃO</span>
+  <div class="q-text">Complete: "Amanhã, as tartarugas ___ mais cuidado com os predadores." (ter) — qual terminação está correta?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q40" data-correct="true" data-msg="Isso mesmo! 'Amanhã' pede o futuro: terão." data-tip="">-ÃO (terão)</button>
+    <button class="opt-btn" data-q="q40" data-correct="false" data-msg="Errado! Essa terminação é do passado." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">-AM (tiveram)</button>
+    <button class="opt-btn" data-q="q40" data-correct="false" data-msg="Errado! Essa não é uma terminação verbal estudada." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">-ER (ter)</button>
+  </div>
+  <div class="feedback" id="fb-q40"></div>
+</div>
+
+<!-- Q41 -->
+<div class="card" id="q41">
+  <div class="q-num">41</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">A palavra "perto" se encaixa em qual categoria de R?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q41" data-correct="true" data-msg="Isso mesmo! O R fica entre a vogal E e a consoante T, sem formar encontro consonantal." data-tip="">R entre consoante e vogal (ou vogal e consoante)</button>
+    <button class="opt-btn" data-q="q41" data-correct="false" data-msg="Errado! O R não está no início da palavra." data-tip="💡 Observe onde o R está dentro da palavra 'perto'.">R inicial</button>
+    <button class="opt-btn" data-q="q41" data-correct="false" data-msg="Errado! O R não é a última letra da palavra." data-tip="💡 Observe onde o R está dentro da palavra 'perto'.">R no final</button>
+  </div>
+  <div class="feedback" id="fb-q41"></div>
+</div>
+
+<!-- Q42 reflection -->
+<div class="card reflect" id="q42">
+  <div class="q-num">42</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
   <div class="q-text">Na sua opinião, por que escrever um diário (como o da Maura ou o Naturário) pode ajudar uma pessoa a entender melhor seus sentimentos e experiências?</div>
-  <textarea class="blank-input" id="inp-q34" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q34">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q34"></div>
+  <textarea class="blank-input" id="inp-q42" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q42">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q42"></div>
 </div>
 
-<!-- Q35 reflection -->
-<div class="card reflect" id="q35">
-  <div class="q-num">35</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+<!-- Q43 reflection -->
+<div class="card reflect" id="q43">
+  <div class="q-num">43</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
   <div class="q-text">Escreva uma frase, com no mínimo 5 palavras, sobre algo que você observou na natureza recentemente. Depois, identifique o verbo dela.</div>
-  <textarea class="blank-input" id="inp-q35" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q35">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q35"></div>
+  <textarea class="blank-input" id="inp-q43" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q43">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q43"></div>
 </div>
 
-<!-- Q36 reflection -->
-<div class="card reflect" id="q36">
-  <div class="q-num">36</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+<!-- Q44 reflection -->
+<div class="card reflect" id="q44">
+  <div class="q-num">44</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
   <div class="q-text">Escolha uma palavra de casa e classifique-a como oxítona, paroxítona ou proparoxítona, explicando por quê.</div>
-  <textarea class="blank-input" id="inp-q36" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q36">Ver sugestão de resposta</button>
-  <div class="feedback" id="fb-q36"></div>
+  <textarea class="blank-input" id="inp-q44" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q44">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q44"></div>
 </div>
 
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
@@ -553,7 +654,7 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 33;
+var total = 41;
 
 var blankCfg = {
   'q3':  { accepts: ['isolamento social','isolamento','pandemia'], ok: 'Isso mesmo! O ano de 2020 foi marcado pelo isolamento social (pandemia), o que inspirou o projeto.', nok: 'A resposta correta é: isolamento social (pandemia).', tip: '💡 Pense no motivo pelo qual as crianças ficaram mais tempo em casa em 2020.' },
@@ -566,12 +667,13 @@ var blankCfg = {
   'q26': { accepts: ['rimas','rima'], ok: 'Isso mesmo! Versos com sons parecidos no final formam as rimas.', nok: 'A resposta correta é: rimas.', tip: '💡 Pense em palavras que terminam com o mesmo som.' },
   'q29': { accepts: ['ss'], ok: 'Isso mesmo! Pessoa se escreve com SS.', nok: 'A resposta correta é: SS.', tip: '💡 Pense nas duas letras iguais juntas.' },
   'q32': { accepts: ['ditongo'], ok: 'Isso mesmo! Esse encontro de vogais na mesma sílaba é o ditongo.', nok: 'A resposta correta é: ditongo.', tip: '💡 Pense em palavras como "céu" e "noite".' },
+  'q36b': { accepts: ['garca','garça'], ok: 'Isso mesmo! A garça era o animal que ameaçava a tartaruga.', nok: 'A resposta correta é: garça.', tip: '💡 Releia o texto: qual animal sobrevoou o lago à procura de comida?' },
 };
 
 var reflectionModel = {
-  'q34': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
-  'q35': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
-  'q36': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
+  'q42': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
+  'q43': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
+  'q44': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
 };
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
@@ -624,7 +726,7 @@ Object.keys(blankCfg).forEach(function(qid) {
   });
 });
 
-['q34','q35','q36'].forEach(function(qid) {
+['q42','q43','q44'].forEach(function(qid) {
   var btn = document.getElementById('btn-' + qid);
   btn.addEventListener('click', function() {
     btn.disabled = true;

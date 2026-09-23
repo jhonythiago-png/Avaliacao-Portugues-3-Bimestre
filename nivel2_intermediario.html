@@ -101,14 +101,14 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 2</div>
   <h1>🔥 Intermediário</h1>
-  <p>Interpretação, frases, gêneros textuais, ortografia e mais — 28 questões</p>
+  <p>Interpretação, R, gêneros textuais, verbos, verbete e mais — 36 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 28</span>
+  <span class="score-num" id="scoreDisplay">0 / 36</span>
 </div>
 
 <!-- Q1 blank -->
@@ -420,6 +420,96 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q28"></div>
 </div>
 
+<!-- Q29 -->
+<div class="card" id="q29">
+  <div class="q-num">29</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">A palavra "verde" se encaixa em qual categoria de R?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q29" data-correct="true" data-msg="Isso mesmo! Em 'verde', o R fica entre a vogal E e a consoante D." data-tip="">R entre consoante e vogal (ou vogal e consoante)</button>
+    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! Isso seria se o R estivesse no começo da palavra." data-tip="💡 Observe onde o R está dentro da palavra 'verde'.">R inicial</button>
+    <button class="opt-btn" data-q="q29" data-correct="false" data-msg="Errado! Isso seria se a palavra tivesse duas letras R." data-tip="💡 Observe onde o R está dentro da palavra 'verde'.">RR</button>
+  </div>
+  <div class="feedback" id="fb-q29"></div>
+</div>
+
+<!-- Q30 blank -->
+<div class="card" id="q30">
+  <div class="q-num">30</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">Complete com R ou RR: "O gato saiu co<strong>______</strong>endo atrás do rato pelo quintal." (correr)</div>
+  <input type="text" class="blank-input" id="inp-q30" placeholder="Digite a letra ou letras...">
+  <button class="check-btn" id="btn-q30">Verificar resposta</button>
+  <div class="feedback" id="fb-q30"></div>
+</div>
+
+<!-- Q31 -->
+<div class="card" id="q31">
+  <div class="q-num">31</div><span class="q-type">Uso do R (5 categorias)</span>
+  <div class="q-text">A palavra "tronco" NÃO se encaixa na categoria "R entre consoante e vogal" porque:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q31" data-correct="true" data-msg="Isso mesmo! TR é um encontro consonantal, então fica de fora dessa categoria." data-tip="">Forma um encontro consonantal (TR)</button>
+    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! O R não está no início da palavra 'tronco'." data-tip="💡 Pense nas duas letras juntas 'TR' no início da sílaba.">O R está no início da palavra</button>
+    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! A palavra não tem duas letras R." data-tip="💡 Pense nas duas letras juntas 'TR' no início da sílaba.">A palavra tem duas letras R</button>
+  </div>
+  <div class="feedback" id="fb-q31"></div>
+</div>
+
+<!-- Q32 -->
+<div class="card" id="q32">
+  <div class="q-num">32</div><span class="q-type">Interpretação de assunto</span>
+  <div class="q-text">Um texto que fala sobre pessoas jogando lixo nas ruas, um pedacinho aqui e outro ali, tem como assunto principal:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q32" data-correct="true" data-msg="Isso mesmo! O assunto é a atitude das pessoas em relação ao lixo." data-tip="">A atitude das pessoas em jogar lixo nas ruas</button>
+    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! Não é sobre reciclagem, e sim sobre a atitude de jogar lixo." data-tip="💡 Pense no comportamento das pessoas descrito no texto.">A coleta seletiva de lixo reciclável</button>
+    <button class="opt-btn" data-q="q32" data-correct="false" data-msg="Errado! Não é sobre isso." data-tip="💡 Pense no comportamento das pessoas descrito no texto.">A importância de plantar árvores</button>
+  </div>
+  <div class="feedback" id="fb-q32"></div>
+</div>
+
+<!-- Q33 blank -->
+<div class="card" id="q33">
+  <div class="q-num">33</div><span class="q-type">Verbo AM/ÃO</span>
+  <div class="q-text">Complete no passado: "Ontem, João e Teresa <strong>______</strong> bola no quintal." (jogar)</div>
+  <input type="text" class="blank-input" id="inp-q33" placeholder="Digite o verbo...">
+  <button class="check-btn" id="btn-q33">Verificar resposta</button>
+  <div class="feedback" id="fb-q33"></div>
+</div>
+
+<!-- Q34 -->
+<div class="card" id="q34">
+  <div class="q-num">34</div><span class="q-type">Verbo AM/ÃO</span>
+  <div class="q-text">Complete no futuro: "Amanhã, os meninos ___ futebol na quadra." (jogar)</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q34" data-correct="true" data-msg="Isso mesmo! 'Amanhã' pede o futuro: jogarão." data-tip="">Jogarão</button>
+    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Essa terminação é do passado." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">Jogaram</button>
+    <button class="opt-btn" data-q="q34" data-correct="false" data-msg="Errado! Essa não é a forma correta do verbo." data-tip="💡 'Amanhã' indica que a ação ainda vai acontecer.">Jogava</button>
+  </div>
+  <div class="feedback" id="fb-q34"></div>
+</div>
+
+<!-- Q35 -->
+<div class="card" id="q35">
+  <div class="q-num">35</div><span class="q-type">Verbete</span>
+  <div class="q-text">Qual verbete está correto para a palavra "sussurrar"?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q35" data-correct="true" data-msg="Isso mesmo! Sussurrar é falar bem baixinho." data-tip="">Falar bem baixinho, quase sem som.</button>
+    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Isso descreve a palavra 'gritar'." data-tip="💡 Pense em como alguém fala um segredo.">Falar muito alto, gritando.</button>
+    <button class="opt-btn" data-q="q35" data-correct="false" data-msg="Errado! Isso descreve a palavra 'correr'." data-tip="💡 Pense em como alguém fala um segredo.">Correr muito rápido.</button>
+  </div>
+  <div class="feedback" id="fb-q35"></div>
+</div>
+
+<!-- Q36 -->
+<div class="card" id="q36">
+  <div class="q-num">36</div><span class="q-type">Verbete</span>
+  <div class="q-text">Ao criar um verbete, é importante incluir:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q36" data-correct="true" data-msg="Isso mesmo! Um bom verbete tem classe gramatical e significado." data-tip="">A classe gramatical e o significado da palavra</button>
+    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso é mais parte de uma tirinha." data-tip="💡 Pense no que o dicionário sempre mostra sobre uma palavra.">Personagens e balões de fala</button>
+    <button class="opt-btn" data-q="q36" data-correct="false" data-msg="Errado! Isso é mais parte de um diário." data-tip="💡 Pense no que o dicionário sempre mostra sobre uma palavra.">A data e os sentimentos do autor</button>
+  </div>
+  <div class="feedback" id="fb-q36"></div>
+</div>
+
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
 
 <div class="result-panel" id="resultPanel">
@@ -448,7 +538,7 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 28;
+var total = 36;
 
 var blankCfg = {
   'q1':  { accepts: ['rr'], ok: 'Isso mesmo! R forte entre vogais se escreve com RR.', nok: 'A resposta correta é: RR.', tip: '💡 Pense na palavra "carro"!' },
@@ -460,6 +550,8 @@ var blankCfg = {
   'q21': { accepts: ['verbete'], ok: 'Isso mesmo! Verbete explica o significado de uma palavra.', nok: 'A resposta correta é: verbete.', tip: '💡 Pense no texto do dicionário.' },
   'q23': { accepts: ['polissemica','polissêmica'], ok: 'Isso mesmo! Uma palavra com vários significados é polissêmica.', nok: 'A resposta correta é: polissêmica.', tip: '💡 Pense em "vela", que tem mais de um significado.' },
   'q26': { accepts: ['temperado'], ok: 'Isso mesmo! Tempero + ado = temperado.', nok: 'A resposta correta é: temperado.', tip: '💡 Pense em "comida temperada".' },
+  'q30': { accepts: ['rr'], ok: 'Isso mesmo! "Correr" tem som forte entre vogais, por isso se escreve com RR.', nok: 'A resposta correta é: RR.', tip: '💡 Pense no som forte de "correr" entre as vogais O e E.' },
+  'q33': { accepts: ['jogaram'], ok: 'Isso mesmo! Jogaram está no passado (-AM).', nok: 'A resposta correta é: jogaram.', tip: '💡 "Ontem" indica que já aconteceu.' },
 };
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
@@ -524,7 +616,7 @@ document.getElementById('finishBtn').addEventListener('click', function() {
   else if (nota >= 40)  { emoji = '💪'; msg = 'Continue tentando! Estude o resumo e vai arrasar!'; gradeLabel = 'PODE MAIS!'; }
   else                   { emoji = '📚'; msg = 'Não desista! Leia o resumo e tente novamente! 💛'; gradeLabel = 'ESTUDE MAIS!'; }
   document.getElementById('resultEmoji').textContent = emoji;
-  document.getElementById('resultGrade').textContent = score + ' / 28';
+  document.getElementById('resultGrade').textContent = score + ' / 36';
   document.getElementById('resultGradeLabel').textContent = gradeLabel;
   document.getElementById('resultMsg').textContent = msg;
   document.getElementById('resultScore').textContent = 'Você acertou ' + score + ' de ' + total + ' questões.';
