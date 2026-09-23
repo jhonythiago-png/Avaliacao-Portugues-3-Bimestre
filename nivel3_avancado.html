@@ -109,15 +109,15 @@ body.pdf-export .credit { color: #888 !important; }
 <div class="header">
   <div class="level-tag">Nível 3</div>
   <h1>💎 Avançado</h1>
-  <p>Leitura, raciocínio e reflexão — 26 questões</p>
+  <p>Leitura, raciocínio e reflexão — 36 questões</p>
 </div>
 
 <div class="wrap">
 <div class="print-btn-wrap"><button class="print-btn" id="pdfBtn" onclick="downloadPDF()">⬇️ Baixar PDF</button></div>
-<div class="info-banner">💡 As questões de <strong>1 a 23</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
+<div class="info-banner">💡 As questões de <strong>1 a 33</strong> valem ponto. As <strong>3 últimas</strong> são de reflexão (sem resposta certa ou errada) — depois é só conferir a sugestão no gabarito!</div>
 <div class="score-bar">
   <span class="score-label">Pontuação</span>
-  <span class="score-num" id="scoreDisplay">0 / 23</span>
+  <span class="score-num" id="scoreDisplay">0 / 33</span>
 </div>
 
 <!-- Q1 -->
@@ -386,31 +386,143 @@ body.pdf-export .credit { color: #888 !important; }
   <div class="feedback" id="fb-q23"></div>
 </div>
 
-<!-- Q24 reflection -->
-<div class="card reflect" id="q24">
-  <div class="q-num">24</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Na sua opinião, por que escrever um diário (como o da Maura ou o Naturário) pode ajudar uma pessoa a entender melhor seus sentimentos e experiências?</div>
-  <textarea class="blank-input" id="inp-q24" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q24">Ver sugestão de resposta</button>
+<!-- Q24 -->
+<div class="card" id="q24">
+  <div class="q-num">24</div><span class="q-type">Interpretação · Poema "Colorir"</span>
+  <div class="q-hint">📖 No poema "Colorir", o eu lírico deseja colorir o céu, o mar, a bandeira, o coração e a casa com diferentes cores.</div>
+  <div class="q-text">Qual destes elementos NÃO aparece no poema "Colorir" como algo a ser colorido?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q24" data-correct="true" data-msg="Isso mesmo! O Sol não aparece como um dos elementos a ser colorido no poema." data-tip="">O Sol</button>
+    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! O céu aparece no poema." data-tip="💡 Releia a lista: céu, mar, bandeira, coração e casa.">O céu</button>
+    <button class="opt-btn" data-q="q24" data-correct="false" data-msg="Errado! O coração aparece no poema." data-tip="💡 Releia a lista: céu, mar, bandeira, coração e casa.">O coração</button>
+  </div>
   <div class="feedback" id="fb-q24"></div>
 </div>
 
-<!-- Q25 reflection -->
-<div class="card reflect" id="q25">
-  <div class="q-num">25</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Escreva uma frase, com no mínimo 5 palavras, sobre algo que você observou na natureza recentemente. Depois, identifique o verbo dela.</div>
-  <textarea class="blank-input" id="inp-q25" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q25">Ver sugestão de resposta</button>
+<!-- Q25 -->
+<div class="card" id="q25">
+  <div class="q-num">25</div><span class="q-type">Gêneros textuais</span>
+  <div class="q-text">Qual é a finalidade principal de um poema como "Colorir"?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q25" data-correct="true" data-msg="Isso mesmo! Poemas expressam sentimentos de forma criativa, com rimas e recursos poéticos." data-tip="">Expressar sentimentos de forma criativa, com rimas</button>
+    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Isso descreve melhor um verbete." data-tip="💡 Pense na estrutura em versos e rimas do poema.">Explicar o significado de palavras difíceis</button>
+    <button class="opt-btn" data-q="q25" data-correct="false" data-msg="Errado! Isso descreve melhor uma notícia de jornal." data-tip="💡 Pense na estrutura em versos e rimas do poema.">Informar fatos reais e recentes</button>
+  </div>
   <div class="feedback" id="fb-q25"></div>
 </div>
 
-<!-- Q26 reflection -->
-<div class="card reflect" id="q26">
-  <div class="q-num">26</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
-  <div class="q-text">Escolha uma palavra de casa e classifique-a como oxítona, paroxítona ou proparoxítona, explicando por quê.</div>
-  <textarea class="blank-input" id="inp-q26" placeholder="Escreva sua resposta..."></textarea>
-  <button class="check-btn" id="btn-q26">Ver sugestão de resposta</button>
+<!-- Q26 blank -->
+<div class="card" id="q26">
+  <div class="q-num">26</div><span class="q-type">Gêneros textuais</span>
+  <div class="q-text">Complete: no poema, os versos que terminam com sons parecidos formam as <strong>______</strong>.</div>
+  <input type="text" class="blank-input" id="inp-q26" placeholder="Digite a palavra...">
+  <button class="check-btn" id="btn-q26">Verificar resposta</button>
   <div class="feedback" id="fb-q26"></div>
+</div>
+
+<!-- Q27 -->
+<div class="card" id="q27">
+  <div class="q-num">27</div><span class="q-type">Polissemia</span>
+  <div class="q-text">No poema, a palavra "casa" é usada com o sentido de "formarem par" (casar). Isso é um exemplo de:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q27" data-correct="true" data-msg="Isso mesmo! A palavra 'casa' aqui não significa moradia, e sim uma forma do verbo casar — polissemia." data-tip="">Polissemia</button>
+    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense nos dois significados possíveis da palavra 'casa'.">Sílaba tônica</button>
+    <button class="opt-btn" data-q="q27" data-correct="false" data-msg="Errado! Esse termo não se refere a isso." data-tip="💡 Pense nos dois significados possíveis da palavra 'casa'.">Ditongo</button>
+  </div>
+  <div class="feedback" id="fb-q27"></div>
+</div>
+
+<!-- Q28 -->
+<div class="card" id="q28">
+  <div class="q-num">28</div><span class="q-type">Som de /S/</span>
+  <div class="q-text">Na palavra "excesso", quais letras juntas representam o som de S na primeira sílaba tônica?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q28" data-correct="true" data-msg="Isso mesmo! Em 'excesso', o som de S é representado por XC." data-tip="">XC</button>
+    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! SS aparece em 'pessoa', não em 'excesso'." data-tip="💡 Observe as letras antes do 'esso' em 'excesso'.">SS</button>
+    <button class="opt-btn" data-q="q28" data-correct="false" data-msg="Errado! SC aparece em 'nascimento', não em 'excesso'." data-tip="💡 Observe as letras antes do 'esso' em 'excesso'.">SC</button>
+  </div>
+  <div class="feedback" id="fb-q28"></div>
+</div>
+
+<!-- Q29 blank -->
+<div class="card" id="q29">
+  <div class="q-num">29</div><span class="q-type">Som de /S/</span>
+  <div class="q-text">Complete: a palavra "pessoa" tem o som de S representado pela letra dupla <strong>______</strong>.</div>
+  <input type="text" class="blank-input" id="inp-q29" placeholder="Digite a letra...">
+  <button class="check-btn" id="btn-q29">Verificar resposta</button>
+  <div class="feedback" id="fb-q29"></div>
+</div>
+
+<!-- Q30 -->
+<div class="card" id="q30">
+  <div class="q-num">30</div><span class="q-type">Sufixos -ADA/-ADO</span>
+  <div class="q-text">Qual é o significado da expressão "noite estrelada"?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q30" data-correct="true" data-msg="Isso mesmo! 'Estrelada' indica a característica de ter muitas estrelas visíveis." data-tip="">Uma noite com muitas estrelas visíveis no céu</button>
+    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! Não tem relação com o clima." data-tip="💡 Pense no substantivo 'estrela' virando característica.">Uma noite muito fria</button>
+    <button class="opt-btn" data-q="q30" data-correct="false" data-msg="Errado! Não tem relação com o horário." data-tip="💡 Pense no substantivo 'estrela' virando característica.">Uma noite sem Lua</button>
+  </div>
+  <div class="feedback" id="fb-q30"></div>
+</div>
+
+<!-- Q31 -->
+<div class="card" id="q31">
+  <div class="q-num">31</div><span class="q-type">Sufixos -ADA/-ADO</span>
+  <div class="q-text">Ao transformar o substantivo "ânimo" com o sufixo -ADO, obtemos a palavra:</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q31" data-correct="true" data-msg="Isso mesmo! Ânimo + ado = animado." data-tip="">Animado</button>
+    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! Essa palavra não usa o sufixo -ADO corretamente." data-tip="💡 Pense em 'turma animada'.">Animoso</button>
+    <button class="opt-btn" data-q="q31" data-correct="false" data-msg="Errado! Essa palavra não existe." data-tip="💡 Pense em 'turma animada'.">Animento</button>
+  </div>
+  <div class="feedback" id="fb-q31"></div>
+</div>
+
+<!-- Q32 blank -->
+<div class="card" id="q32">
+  <div class="q-num">32</div><span class="q-type">Ditongos</span>
+  <div class="q-text">Complete: o encontro de duas vogais numa mesma sílaba é chamado de <strong>______</strong>.</div>
+  <input type="text" class="blank-input" id="inp-q32" placeholder="Digite a palavra...">
+  <button class="check-btn" id="btn-q32">Verificar resposta</button>
+  <div class="feedback" id="fb-q32"></div>
+</div>
+
+<!-- Q33 -->
+<div class="card" id="q33">
+  <div class="q-num">33</div><span class="q-type">Ditongos</span>
+  <div class="q-text">Qual destas palavras tem ditongo?</div>
+  <div class="options">
+    <button class="opt-btn" data-q="q33" data-correct="true" data-msg="Isso mesmo! 'Animais' tem o ditongo 'ai' (ani-mais)." data-tip="">Animais</button>
+    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Floresta' não tem duas vogais juntas numa mesma sílaba." data-tip="💡 Separe a palavra em sílabas: a-ni-mais.">Floresta</button>
+    <button class="opt-btn" data-q="q33" data-correct="false" data-msg="Errado! 'Parque' não tem duas vogais juntas numa mesma sílaba." data-tip="💡 Separe a palavra em sílabas: a-ni-mais.">Parque</button>
+  </div>
+  <div class="feedback" id="fb-q33"></div>
+</div>
+
+<!-- Q34 reflection -->
+<div class="card reflect" id="q34">
+  <div class="q-num">34</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+  <div class="q-text">Na sua opinião, por que escrever um diário (como o da Maura ou o Naturário) pode ajudar uma pessoa a entender melhor seus sentimentos e experiências?</div>
+  <textarea class="blank-input" id="inp-q34" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q34">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q34"></div>
+</div>
+
+<!-- Q35 reflection -->
+<div class="card reflect" id="q35">
+  <div class="q-num">35</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+  <div class="q-text">Escreva uma frase, com no mínimo 5 palavras, sobre algo que você observou na natureza recentemente. Depois, identifique o verbo dela.</div>
+  <textarea class="blank-input" id="inp-q35" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q35">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q35"></div>
+</div>
+
+<!-- Q36 reflection -->
+<div class="card reflect" id="q36">
+  <div class="q-num">36</div><span class="q-type">💭 Reflexão (não conta ponto)</span>
+  <div class="q-text">Escolha uma palavra de casa e classifique-a como oxítona, paroxítona ou proparoxítona, explicando por quê.</div>
+  <textarea class="blank-input" id="inp-q36" placeholder="Escreva sua resposta..."></textarea>
+  <button class="check-btn" id="btn-q36">Ver sugestão de resposta</button>
+  <div class="feedback" id="fb-q36"></div>
 </div>
 
 <button class="finish-btn" id="finishBtn">Ver meu resultado 🎉</button>
@@ -441,7 +553,7 @@ body.pdf-export .credit { color: #888 !important; }
 <script>
 var score = 0;
 var answered = {};
-var total = 23;
+var total = 33;
 
 var blankCfg = {
   'q3':  { accepts: ['isolamento social','isolamento','pandemia'], ok: 'Isso mesmo! O ano de 2020 foi marcado pelo isolamento social (pandemia), o que inspirou o projeto.', nok: 'A resposta correta é: isolamento social (pandemia).', tip: '💡 Pense no motivo pelo qual as crianças ficaram mais tempo em casa em 2020.' },
@@ -451,12 +563,15 @@ var blankCfg = {
   'q14': { accepts: ['as arvores','as árvores','arvores','árvores'], ok: 'Isso mesmo! "As árvores" é o sujeito, que vem antes do verbo.', nok: 'A resposta correta é: as árvores.', tip: '💡 Pense em quem pratica a ação de "ficar verde".' },
   'q17': { accepts: ['paroxitona','paroxítona'], ok: 'Isso mesmo! Sílaba tônica na penúltima posição = paroxítona.', nok: 'A resposta correta é: paroxítona.', tip: '💡 Penúltima sílaba = paroxítona.' },
   'q22': { accepts: ['voltaram'], ok: 'Isso mesmo! Voltaram está no passado (-AM).', nok: 'A resposta correta é: voltaram.', tip: '💡 "No mês passado" indica que já aconteceu.' },
+  'q26': { accepts: ['rimas','rima'], ok: 'Isso mesmo! Versos com sons parecidos no final formam as rimas.', nok: 'A resposta correta é: rimas.', tip: '💡 Pense em palavras que terminam com o mesmo som.' },
+  'q29': { accepts: ['ss'], ok: 'Isso mesmo! Pessoa se escreve com SS.', nok: 'A resposta correta é: SS.', tip: '💡 Pense nas duas letras iguais juntas.' },
+  'q32': { accepts: ['ditongo'], ok: 'Isso mesmo! Esse encontro de vogais na mesma sílaba é o ditongo.', nok: 'A resposta correta é: ditongo.', tip: '💡 Pense em palavras como "céu" e "noite".' },
 };
 
 var reflectionModel = {
-  'q24': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
-  'q25': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
-  'q26': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
+  'q34': 'Sugestão: escrever um diário ajuda a organizar os pensamentos, perceber os próprios sentimentos com mais clareza e guardar boas lembranças para reler no futuro.',
+  'q35': 'Sugestão: por exemplo, "As flores do meu quintal cresceram bastante essa semana." O verbo é "cresceram".',
+  'q36': 'Sugestão: por exemplo, "sofá" (so-FÁ) é oxítona, porque a sílaba tônica está na última sílaba. Qualquer palavra bem explicada vale!'
 };
 
 function showFeedback(qid, isCorrect, okMsg, nokMsg, tipMsg) {
@@ -509,7 +624,7 @@ Object.keys(blankCfg).forEach(function(qid) {
   });
 });
 
-['q24','q25','q26'].forEach(function(qid) {
+['q34','q35','q36'].forEach(function(qid) {
   var btn = document.getElementById('btn-' + qid);
   btn.addEventListener('click', function() {
     btn.disabled = true;
